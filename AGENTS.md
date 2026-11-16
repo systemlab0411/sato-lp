@@ -15,7 +15,7 @@
 - 読み取り可能な範囲：themeフォルダ内
 - 変更可能な範囲：themeフォルダ内
 - 変更禁止箇所：なし
-- デザイン参照先：https://www.figma.com/design/LAkRH9ufaLeh0PVPJhWSkc/%E3%80%90%E3%82%B3%E3%83%BC%E3%83%87%E3%82%A3%E3%83%B3%E3%82%B0%E7%94%A8%E3%80%91261029%E4%BD%90%E8%97%A4%E3%82%B0%E3%83%AB%E3%83%BC%E3%83%97LP?node-id=28153-2&t=ziwbyc9CfCCGjZQc-0
+- デザイン参照先：https://www.figma.com/design/LAkRH9ufaLeh0PVPJhWSkc/%E3%80%90%E3%82%B3%E3%83%BC%E3%83%87%E3%82%A3%E3%83%B3%E3%82%B0%E7%94%A8%E3%80%91261029%E4%BD%90%E8%97%A4%E3%82%B0%E3%83%AB%E3%83%BC%E3%83%97LP?node-id=0-1&p=f&t=ziwbyc9CfCCGjZQc-0
 - 仕様の参照先：なし
 
 ## 3 コーディング規約の参照
