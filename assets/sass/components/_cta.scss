@@ -1,0 +1,14 @@
+@use "../base/_global.scss" as *;
+
+.cta {
+    position: relative;
+    padding-top: clamp(72px, 12.71vw, 150px);
+}
+.cta__wrap {
+    display: flex;
+    justify-content: space-between;
+    @include spTab {
+        flex-direction: column;
+        row-gap: 40px;
+    }
+}

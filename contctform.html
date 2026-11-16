@@ -1,0 +1,53 @@
+<table class="contact-form__table">
+    <tbody>
+        <tr class="contact-form__table-row">
+            <th class="contact-form__table-title "><label class="contact-form__table-label" for="your-name">お名前</label><span class="contact-form__table-required-mark">必須</span></th>
+            <td class="contact-form__table-input">[text* your-name id:your-name class:contact-form__table-input-text placeholder]</td>
+        </tr>
+        <tr class="contact-form__table-row">
+            <th class="contact-form__table-title"><label class="contact-form__table-label" for="your-furigana">お名前<span class="fs-14"> （フリガナ）</span></label><span class="contact-form__optional">任意</span></th>
+            <td class="contact-form__table-input">[text your-furigana id:your-furigana class:contact-form__table-input-text placeholder]</td>
+        </tr>
+        <tr class="contact-form__table-row">
+            <th class="contact-form__table-title"><label class="contact-form__table-label" for="your-company">法人名</label><span class="contact-form__optional">任意</span></th>
+            <td class="contact-form__table-input">[text your-company id:your-company class:contact-form__table-input-text placeholder]</td>
+        </tr>
+        <tr class="contact-form__table-row">
+            <th class="contact-form__table-title"><label class="contact-form__table-label" for="phone-number">電話番号</label><span class="contact-form__table-required-mark">必須</span></th>
+            <td class="contact-form__table-input">[tel* phone-number id:phone-number class:contact-form__table-input-text placeholder]</td>
+        </tr>
+        <tr class="contact-form__table-row">
+            <th class="contact-form__table-title"><label class="contact-form__table-label" for="your-email">メールアドレス</label><span class="contact-form__table-required-mark">必須</span></th>
+            <td class="contact-form__table-input">[email* your-email id:your-email class:contact-form__table-input-text autocomplete:email placeholder]</td>
+        </tr>
+        <span class="p-country-name" style="display:none;">Japan</span>
+        <tr class="contact-form__table-row">
+            <th class="contact-form__table-title"><label class="contact-form__table-label" for="your-post">郵便番号</label><span class="contact-form__optional">任意</span></th>
+            <td class="contact-form__table-input">[text your-post id:your-post class:contact-form__table-input-text class:p-postal-code placeholder]</td>
+        </tr>
+        <tr class="contact-form__table-row">
+            <th class="contact-form__table-title"><label class="contact-form__table-label" for="your-address">住所</label><span class="contact-form__optional">任意</span></th>
+            <td class="contact-form__table-input">[text your-address id:your-address class:contact-form__table-input-text class:p-region class:p-locality class:p-street-address class:p-extended-address placeholder]</td>
+        </tr>
+        <tr class="contact-form__table-row">
+            <th class="contact-form__table-title"><label class="contact-form__table-label" for="your-message">ご質問</label><span class="contact-form__table-required-mark">必須</span></th>
+            <td class="contact-form__table-input">[textarea* your-message id:your-message class:contact-form__table-input-textbox placeholder]</td>
+        </tr>
+    </tbody>
+</table>
+<div class="contact-disc__wrap">
+    <div class="contact-privacy sp-justify t-center">
+        <p class="contact-privacy__ttl">個人情報の取り扱いについて</p>
+        <p class="contact-privacy__text">ご入力いただいたお名前及びメールアドレス等の個人情報は、お問い合わせに対する返答等のためにのみ利用し、<br class="sp-non-br">その他の目的には利用致しません。</p>
+        <p class="contact-privacy__text">ご提供いただいた個人情報については、弊社の<a class="contact-privacy__link" href="/privacy/" target="_blank" rel="noopener noreferrer" style="text-decoration: underline;">プライバシーポリシー</a>に基づき適切に管理いたします。<br class="sp-non-br">ご了承いただけましたら、以下のボタンをチェックしていただき、フォームを送信してください。</p>
+    </div>
+    <div class="contact-form__consent">
+        [acceptance acceptance-247 class:contact-form__checkbox] 個人情報の取り扱いについて<span class="i-bl">同意する</span> [/acceptance]
+    </div>
+    
+</div>
+<div class="contact-btn">
+    [submit "入力内容を確認する"]
+    <span class="btn__arrow"></span>
+    [multistep multistep-118 first_step "/contact-confirm/"]
+</div>

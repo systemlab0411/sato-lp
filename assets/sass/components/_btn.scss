@@ -1,0 +1,143 @@
+@use "../base/_global.scss" as *;
+
+
+.btn__wrap {
+    width: fit-content;
+    &--center {
+        margin-inline: auto;
+    }
+    &--pc {
+        display: block;
+        @include sp {
+            display: none;
+        }
+    }
+    &--sp {
+        display: none;
+        @include sp {
+            display: block;
+        }
+    }
+}
+.btn {
+    display: flex;
+    width: 250px;
+    height: 60px;
+    border-radius: 30px;
+    border: 1px solid var(--gray-2);
+    background-color: var(--white);
+    font-size: var(--fs-14);
+    font-weight: var(--fw-500);
+    align-items: center;
+    padding-left: 30px;
+    position: relative;
+    transition: .3s;
+    &__arrow {
+        transition: .3s;
+        position: absolute;
+        width: 20px;
+        height: 9px;
+        -webkit-mask-image: url(../../assets/images/btn-arrow.svg);
+        mask-image: url(../../assets/images/btn-arrow.svg);
+        -webkit-mask-size: contain;
+        mask-size: contain;
+        -webkit-mask-repeat: no-repeat;
+        mask-repeat: no-repeat;
+        -webkit-mask-position: center; /* 位置も中央に揃えるのが安全 */
+        mask-position: center;
+        background-color: var(--black);
+        top: 50%;
+        right: 20px;
+        transform: translateY(-50%);
+        &--red {
+            background-color: var(--main-color);
+        }
+        &--white {
+            background-color: var(--white);
+        }
+        &--green {
+            background-color: var(--green-6);
+        }
+        &--revers {
+            transform: rotate(180deg) translateY(-50%);
+            transform-origin: top center;
+        }
+        &--vertical {
+            transform: rotate(90deg) translateY(-50%);
+            transform-origin: top;
+            transition: .3s;
+            &.open {
+                transform: rotate(-90deg) translateY(-50%);
+                transform-origin: top;
+                transition: .3s;
+            } 
+        }
+        &--left {
+            transform: rotate(180deg) translateY(50%);
+            transform-origin: center center;
+            right: auto;
+            left: 20px;
+        }
+    }
+    &:hover {
+        background-color: var(--main-color);
+        color: var(--white);
+        border-color: var(--main-color);
+        .btn__arrow {
+            background-color: var(--white);
+            right: 10px;
+            &--vertical {
+                right: 20px;
+            }
+            // &--left {
+            //     left: 10px;
+            // }
+        }
+    }
+    &--border-white {
+        border: 1px solid var(--white);
+        &:hover {
+            border-color: var(--white);
+        }
+    }
+    &--green {
+        border-color: var(--green-6);
+        color: var(--green-6);
+        &:hover {
+            border-color: var(--white);
+            background-color: var(--green-6);
+        }
+    }
+    &--big {
+        width: 300px;
+        height: 60px;
+    }
+    
+}
+
+.btn-min {
+    display: block;
+    font-size: 20px;
+    position: relative;
+    width: fit-content;
+    padding-right: 34px;
+    
+    &__arrow {
+        position: absolute;
+        width: 8px;
+        height: 8px;
+        clip-path: polygon(0 0, 0% 100%, 100% 50%);
+        background-color: var(--black);
+        top: 50%;
+        right: 0;
+        transform: translateY(-50%);
+        transition: .3s;
+    }
+    &:hover {
+        color: var(--main-color);
+        .btn-min__arrow {
+            background-color: var(--main-color);
+            right: -5px;
+        }
+    }
+}

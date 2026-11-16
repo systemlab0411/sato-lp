@@ -1,0 +1,31 @@
+@use "../base/_global.scss" as *;
+
+//404ページ
+.notfound {
+    margin-bottom: 150px;
+}
+
+.notfound__inner {
+    text-align: center;
+}
+
+.notfound__desc-main {
+    font-size: 24px;
+    line-height: 2;
+    @include sp {
+        font-size: 18px;
+    }
+}
+
+.notfound__desc-sub {
+    font-size: 16px;
+    line-height: 2;
+    margin-top: 30px;
+    @include sp {
+        font-size: 14px;
+        padding: 0 20px;
+        br {
+            display: none;
+        }
+    }
+}

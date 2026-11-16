@@ -1,0 +1,190 @@
+@use "../base/global.scss" as *;
+
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+html {
+    font-size: 100%;
+}
+body {
+    font-family: var(--font-base);
+    // font-feature-settings: "palt";
+    line-height: 1.6;
+    letter-spacing: .06em;
+    height: 100%;
+    color: var(--black);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-style: normal;
+}
+.cnt {
+    @include container;
+}
+.cnt-sm {
+    @include container-sm;
+}
+.cnt-s {
+    @include container-s;
+}
+p {
+    font-weight: 500;
+    font-size: 16px;
+}
+a {
+    text-decoration: none;
+    color: var(--black);
+}
+li {
+    list-style: none;
+    font-weight: 500;
+}
+img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+/*font & text*/
+.ja {
+    font-family:  var(--ja);
+    font-optical-sizing: auto;
+}
+.ja-sub {
+    font-family: var(--ja-sub);
+}
+.en {
+    font-family: var(--en);
+}
+.text {
+    font-size: 16px;
+    font-weight: 400;
+}
+.t-center {
+    text-align: center;
+}
+.nowrap {
+    white-space: nowrap;
+}
+
+/*display*/
+.block {
+    display: block;
+}
+.i-bl {
+    display: inline-block;
+}
+.none {
+    display: none;
+}
+.grid {
+    display: grid;
+}
+.sp-block {
+    @include sp {
+        display: block;
+    }
+}
+.sp-s-block {
+    @include sp-s {
+        display: block;
+    }
+}
+.pc-block {
+    @include sp {
+        display: none;
+    }
+}
+.sp-ss-block {
+    @include sp-ss {
+        display: block;
+    }
+}
+.sp-none {
+    @include sp {
+        display: none !important;
+    }
+}.sp-ss-none {
+    @include sp-ss {
+        display: none !important;
+    }
+}
+.hidden {
+    overflow: hidden;
+}
+
+/*position*/
+.relative {
+    position: relative;
+}
+.absolute {
+    position: absolute;
+}
+
+/*flex*/
+.flex {
+    display: flex;
+}
+.jus-al-center {
+    justify-content: center;
+    align-items: center;
+}
+.jus-center {
+    justify-content: center;
+}
+.jus-bet {
+    justify-content: space-between;
+}
+.sp-der-col {
+    @include sp {
+        flex-direction: column;
+    }
+}
+.sp-der-col-rev {
+    @include sp {
+        flex-direction: column-reverse;
+    }
+}
+.al-center {
+    align-items: center;
+}
+.row-rev {
+    flex-direction: row-reverse;
+}
+.flex-wrap {
+    flex-wrap: wrap;
+}
+
+/* margin & padding*/ 
+.m-center {
+    margin-inline: auto;
+}
+.sp-m-center {
+    @include sp {
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+/*transition*/
+.transition03 {
+    transition: .3s;
+}
+
+// main
+.main {
+    height: auto;
+    width: 100%;
+}
+
+//br
+.sp-br {
+    display: none;
+    @include sp {
+        display: block;
+    }
+}
+.sp-non-br {
+    @include sp {
+        display: none;
+    }
+}

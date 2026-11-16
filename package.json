@@ -1,0 +1,15 @@
+{
+    "name": "mytheme",
+    "version": "1.0.0",
+    "private": true,
+    "engines": {
+        "node": ">=22.13.0"
+    },
+    "scripts": {
+        "dev": "sass --watch --no-source-map --no-charset --style=compressed assets/sass/main.scss:assets/css/main.min.css",
+        "build": "sass --no-source-map --no-charset assets/sass/main.scss assets/css/main.css && sass --no-source-map --no-charset --style=compressed assets/sass/main.scss assets/css/main.min.css"
+    },
+    "devDependencies": {
+        "sass": "1.108.2"
+    }
+}

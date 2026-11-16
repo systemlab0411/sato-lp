@@ -1,0 +1,24 @@
+@use 'base/base' as *;
+@use 'base/global' as *;
+
+@use 'components/btn' as *;
+@use 'components/cta' as *;
+@use 'components/footer' as *;
+@use 'components/header' as *;
+@use 'components/nav' as *;
+@use 'components/privacy' as *;
+@use 'components/texts' as *;
+@use 'components/ttl' as *;
+@use 'components/u-page-ttl' as *;
+
+@use 'pages/404' as *;
+@use 'pages/about' as *;
+@use 'pages/home' as *;
+@use 'pages/news' as *;
+@use 'pages/recruit' as *;
+@use 'pages/service' as *;
+
+@use 'vendors/breadcrumb' as *;
+@use 'vendors/forms' as *;
+@use 'vendors/scroll-hint' as *;
+@use 'vendors/swiper' as *;

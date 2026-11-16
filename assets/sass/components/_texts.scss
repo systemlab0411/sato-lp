@@ -1,0 +1,33 @@
+@use "../base/_global.scss" as *;
+
+.display-text {
+    font-size: clamp(48px, 10.16vw,120px);
+    font-weight: var(--fw-700);
+    line-height: .9;
+    letter-spacing: var(--ltr-spa-small);
+    line-height: .78;
+    &--red {
+        color: rgba($main-color, .3);
+    }
+    &--strong {
+        font-size: clamp(72px, 13.56vw,160px);
+        font-weight: var(--fw-800);
+    }
+    &--space-s {
+        letter-spacing: -.15em;
+        padding-left: .75em
+    }
+    @include sp {
+        &--space-s {
+            padding-left: .35em
+        }
+    }
+}
+.text-line {
+    background-repeat: no-repeat;
+    background-size: 100% 10px;
+    background-position: 0 100%;
+    &--yellow {
+        background-image: linear-gradient(rgb(253, 238, 75), rgb(253, 238, 75));
+    }
+}

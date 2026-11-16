@@ -1,0 +1,42 @@
+@use "../base/_global.scss" as *;
+
+.u-page__ttl {
+    position: relative;
+    padding-top: calc(110px + var(--global-nav-height));
+    overflow: hidden;
+    @include sp {
+        padding-top: 120px;
+    }
+}
+.u-page__ttl-wrap {
+    max-width: 930px;
+    width: 100%;
+    margin-inline: auto;
+    padding-left: 30px;
+}
+.u-page__ttl-en {
+    font-size: clamp(56px, 10.17vw, 120px);
+    font-weight: var(--fw-500);
+    line-height: var(--line-h-small);
+    letter-spacing: var(--ltr-spa-small);
+    white-space: pre-line;
+    color: var(--main-color);
+    // アニメーション用JSが無効でも見出しを表示する。
+    opacity: 1;
+    .char {
+        display: inline-block;
+        will-change: transform, opacity;
+        &::after {
+            content: '\00a0';
+            display: inline-flex;
+            width: 0;
+        }
+    }
+}
+.u-page__ttl-ja {
+    font-size: clamp(20px, 2.03vw, 24px);
+    font-weight: var(--fw-700);
+    line-height: var(--line-h-large);
+    letter-spacing: var(--ltr-spa-large);
+    opacity: 1;
+}

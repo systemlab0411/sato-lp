@@ -1,0 +1,7 @@
+@use "../base/_global.scss" as *;
+
+.scroll-hint-shadow-wrap {
+    &::before, &::after {
+        display: none;
+    }
+}
