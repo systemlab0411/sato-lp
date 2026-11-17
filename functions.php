@@ -42,7 +42,8 @@ function my_enqueue_scripts() {
 
     //webFont
     //GoogleFonts zen-kaku
-    wp_enqueue_style('zen-kaku-gothic-new', 'https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New:wght@400;500&display=swap');
+    wp_enqueue_style('zen-kaku-gothic-new', 'https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New:wght@400;500;700&display=swap');
+    wp_enqueue_style('jost', 'https://fonts.googleapis.com/css2?family=Jost:wght@400;500;600&display=swap');
     //wp_enqueue_style('zen-kaku-gothic-new-500', get_template_directory_uri() . '/assets/fonts/zen-kaku-gothic-new-v16-japanese-500.woff2', array(), null, "all");
     //wp_enqueue_style('zen-kaku-gothic-new-regular', get_template_directory_uri() . '/assets/fonts/zen-kaku-gothic-new-v16-japanese-regular.woff2', array(), null, "all");
     //GoogleFonts sippori-mincho

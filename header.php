@@ -11,24 +11,33 @@
 </head>
 
 <body <?php body_class(); ?> id="body">
+  <?php wp_body_open(); ?>
   
-  <header class="header" id="header-body">
-    <div class="header__wrap">
-      <h1 class="header__logo"><a href="<?php echo esc_url(home_url()); ?>"><img src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/images/logo.webp" alt=""></a></h1>
-      <div class="header__hamburger" id="js-ham-btn">
-        <span></span>
-        <span></span>
-      </div>
-      <div class="header__nav-wrap" id="ham_list">
-        <nav class="header__nav">
-          <ul class="header__nav-list">
-            <li><a href="<?php echo esc_url(home_url('/about/')); ?>">会社概要</a></li>
-            <li><a href="<?php echo esc_url(home_url('/service/')); ?>">事業内容</a></li>
-            <li><a href="<?php echo esc_url(home_url('/recruit/')); ?>">採用情報</a></li>
-            <li><a href="<?php echo esc_url(home_url('/news/')); ?>">お知らせ</a></li>
-          </ul>
-        </nav>
-        <div class="header__nav-btn"><a class="btn" href="<?php echo esc_url(home_url('/contact/')); ?>">お問い合わせ</a></div>
-      </div>
-    </div>
-  </header><!-- /.l-header -->
+<header class="header">
+    <a class="header__logo" href="<?php echo esc_url(home_url('/')); ?>" aria-label="SATO GROUP トップページ">
+        <img src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/images/logo-sato-group.svg" width="251" height="70" alt="SATO GROUP">
+    </a>
+    <nav class="header__nav" aria-label="ページ内ナビゲーション">
+        <ul class="header__nav-list">
+            <li class="header__nav-item"><a class="header__nav-link header__nav-link--top<?php if (is_front_page()) : ?> header__nav-link--current<?php endif; ?>" href="<?php echo esc_url(home_url('/#top')); ?>" lang="en">TOP</a></li>
+            <li class="header__nav-item"><a class="header__nav-link" href="<?php echo esc_url(home_url('/#group-synergy')); ?>">グループの強み</a></li>
+            <li class="header__nav-item">
+                <details class="header__nav-disclosure">
+                    <summary class="header__nav-link header__nav-link--companies">グループ企業<img src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/images/nav-plus.svg" width="11" height="11" alt=""></summary>
+                    <ul class="header__nav-companies">
+                        <li><a href="<?php echo esc_url(home_url('/#company-holdings')); ?>">サトウ・ホールディングス株式会社</a></li>
+                        <li><a href="<?php echo esc_url(home_url('/#company-sato')); ?>">佐藤建設株式会社</a></li>
+                        <li><a href="<?php echo esc_url(home_url('/#company-saiseki')); ?>">株式会社佐藤砕石</a></li>
+                        <li><a href="<?php echo esc_url(home_url('/#company-takei')); ?>">株式会社タケイ</a></li>
+                        <li><a href="<?php echo esc_url(home_url('/#company-sanei')); ?>">三栄工業株式会社</a></li>
+                        <li><a href="<?php echo esc_url(home_url('/#company-fuyoukai')); ?>">社会福祉法人藤暢会</a></li>
+                    </ul>
+                </details>
+            </li>
+        </ul>
+        <a class="header__nav-contact" href="<?php echo esc_url(home_url('/contact/')); ?>">
+            <span>お問い合わせ</span>
+            <img src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/images/nav-contact-arrow.svg" width="40" height="40" alt="">
+        </a>
+    </nav>
+</header>

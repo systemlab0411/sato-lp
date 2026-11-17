@@ -1,1 +1,74 @@
 @use "../base/_global.scss" as *;
+
+.lp-home {
+    font-family: "Zen Kaku Gothic New", sans-serif;
+}
+
+.home-hero {
+    position: relative;
+    height: calc(100vh - var(--admin-bar-height));
+    height: calc(100dvh - var(--admin-bar-height));
+    overflow: hidden;
+    background: #fff;
+}
+
+// Figmaは左220pxを空けたうえで、画面幅相当の写真2枚を右端で切り取っています。
+.home-hero__photos {
+    position: absolute;
+    inset: 0 auto 0 220px;
+    display: flex;
+    width: 100vw;
+}
+
+.home-hero__photo {
+    position: relative;
+    flex: 0 0 50%;
+    height: 100%;
+    overflow: hidden;
+
+    img {
+        position: absolute;
+        max-width: none;
+        object-fit: cover;
+    }
+
+    &--left img {
+        top: -1.69%;
+        left: -39.47%;
+        width: 179.07%;
+        height: 109.24%;
+    }
+
+    &--right img {
+        top: -1.69%;
+        left: -93.65%;
+        width: 221.81%;
+        height: 135.32%;
+    }
+}
+
+.home-hero__copy {
+    position: absolute;
+    top: 50%;
+    left: calc(50% - 252px);
+    width: max-content;
+    transform: translateY(-50%);
+    color: #fff;
+}
+
+.home-hero__title {
+    margin: 0;
+    font-size: 80px;
+    font-weight: 700;
+    line-height: 1;
+    letter-spacing: .06em;
+}
+
+.home-hero__lead {
+    margin: 37px 0 0;
+    font-family: "Jost", sans-serif;
+    font-size: 33px;
+    font-weight: 600;
+    line-height: 1;
+    letter-spacing: .07em;
+}

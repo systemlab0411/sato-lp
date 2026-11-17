@@ -1,3 +1,51 @@
+// detailsは閉じる前に高さをアニメーションさせ、途中の再クリックにも対応します。
+document.addEventListener('DOMContentLoaded', function() {
+    document.querySelectorAll('.header__nav-disclosure').forEach(function(disclosure) {
+        const summary = disclosure.querySelector('summary');
+        if (!summary) return;
+
+        let expanded = disclosure.open;
+        let animation = null;
+
+        summary.addEventListener('click', function(event) {
+            event.preventDefault();
+            const startHeight = disclosure.getBoundingClientRect().height;
+            expanded = !expanded;
+
+            if (animation) {
+                animation.cancel();
+                animation = null;
+            }
+
+            if (window.matchMedia('(prefers-reduced-motion: reduce)').matches || typeof disclosure.animate !== 'function') {
+                disclosure.open = expanded;
+                disclosure.style.overflow = '';
+                return;
+            }
+
+            disclosure.open = true;
+            disclosure.style.overflow = 'hidden';
+            const endHeight = expanded
+                ? disclosure.getBoundingClientRect().height
+                : summary.getBoundingClientRect().height;
+
+            const currentAnimation = disclosure.animate(
+                [{ height: startHeight + 'px' }, { height: endHeight + 'px' }],
+                { duration: 250, easing: 'ease-in-out', fill: 'both' }
+            );
+            animation = currentAnimation;
+
+            currentAnimation.onfinish = function() {
+                if (animation !== currentAnimation) return;
+                disclosure.open = expanded;
+                currentAnimation.cancel();
+                animation = null;
+                disclosure.style.overflow = '';
+            };
+        });
+    });
+});
+
 //onを付与 ハンバーガー
 // document.addEventListener('DOMContentLoaded', function() {
 //     const ham_btn = document.getElementById("js-ham-btn");
@@ -9,10 +57,6 @@
 //     });
 // });
 
-//起動時のちらつき対策
-document.addEventListener('DOMContentLoaded', function() {
-    jQuery('body').fadeIn(1000, "linear");
-});
 jQuery(window).on('load', function(){
     jQuery('body').removeClass('active');
 });
