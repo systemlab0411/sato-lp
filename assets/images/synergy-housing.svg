@@ -1,0 +1,12 @@
+<svg preserveAspectRatio="none" overflow="visible" style="display: block;" width="138.134" height="138.229" viewBox="0 0 138.134 138.229" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="DomainCircle / &#228;&#189;&#143;&#229;&#174;&#133;">
+<use xlink:href="#stroke0_0_51" fill="white"/>
+<mask id="stroke1_0_51" fill="white">
+<use xlink:href="#stroke0_0_51"/>
+</mask>
+<path d="M138.134 69.1144C138.134 107.285 107.211 138.229 69.0668 138.229C30.9223 138.229 0 107.285 0 69.1144C0 30.9436 30.9223 0 69.0668 0C107.211 0 138.134 30.9436 138.134 69.1144Z" stroke-width="4" stroke="#15B29A" mask="url(#stroke1_0_51)"/>
+</g>
+<defs>
+<path id="stroke0_0_51" d="M69.0668 138.229C107.211 138.229 138.134 107.285 138.134 69.1144C138.134 30.9436 107.211 0 69.0668 0C30.9223 0 0 30.9436 0 69.1144C0 107.285 30.9223 138.229 69.0668 138.229Z"/>
+</defs>
+</svg>

@@ -142,3 +142,594 @@
     line-height: 1;
     letter-spacing: 10px;
 }
+
+.home-synergy {
+    position: relative;
+    overflow: hidden;
+    padding-block: 150px;
+    color: #272222;
+
+    &::before {
+        position: absolute;
+        inset: 0;
+        border-radius: 10px;
+        background: #fbfbfb;
+        content: '';
+    }
+}
+
+// SVGのぼかし用余白100pxを除き、Figmaの回転・反転を各ベクターに適用します。
+.home-synergy__vector {
+    position: absolute;
+    width: 498.058px;
+    height: 465.238px;
+    transform-origin: 0 0;
+    pointer-events: none;
+
+    &--yellow {
+        top: -182.258px;
+        left: calc(50% - 24.646px);
+        transform: matrix(-.951811, .306686, .308952, .951078, 0, 0) translate(-100px, -100px);
+    }
+
+    &--green {
+        top: 334.963px;
+        left: calc(50% + 412.439px);
+        width: 566.405px;
+        height: 615.274px;
+        transform: matrix(.685345, -.728219, .730994, .682384, 0, 0) translate(-100px, -100px);
+    }
+
+    &--blue {
+        top: 236.039px;
+        left: calc(50% - 633.654px);
+        transform: matrix(-.951811, .306686, .308952, .951078, 0, 0) translate(-100px, -100px);
+    }
+}
+
+.home-synergy__inner {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 100px;
+}
+
+.home-synergy__title-en,
+.home-companies__title-en {
+    margin: 0;
+    font-family: "Jost", sans-serif;
+    font-weight: 600;
+    line-height: 1;
+    letter-spacing: .06em;
+}
+
+.home-synergy__title-ja,
+.home-companies__title-ja {
+    margin: 20px 0 0;
+    line-height: 1;
+    letter-spacing: .06em;
+}
+
+.home-synergy__lead {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    font-size: var(--fs-32);
+    font-weight: 700;
+    line-height: 1;
+    color: var(--main-color);
+    white-space: nowrap;
+
+    &::before,
+    &::after {
+        flex: 0 0 50px;
+        height: 1px;
+        background: currentColor;
+        content: '';
+    }
+
+    &::before {
+        margin-right: 40px;
+    }
+
+    &::after {
+        margin-left: 20px;
+    }
+}
+
+.home-synergy__number {
+    font-family: "Jost", sans-serif;
+}
+
+.home-synergy__content {
+    display: grid;
+    grid-template-columns: minmax(0, 424px) minmax(0, 453.688px);
+    justify-content: space-between;
+    column-gap: 26px;
+    margin-inline: auto;
+
+    @include tab {
+        grid-template-columns: 1fr;
+        row-gap: 50px;
+    }
+}
+
+.home-synergy__description {
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+
+    p {
+        margin: 0;
+        line-height: 2.2;
+    }
+
+    @include tab {
+        justify-self: center;
+    }
+}
+
+.home-synergy__figure {
+    margin: 0;
+    padding-top: 100px;
+
+    @include tab {
+        justify-self: center;
+        padding-top: 0;
+    }
+}
+
+// 関係図内の座標のみ固定し、説明文との配置は共通コンテナに追従させます。
+.home-synergy__diagram {
+    position: relative;
+    width: 453.688px;
+    height: 500px;
+}
+
+.home-synergy__hub {
+    position: absolute;
+    top: 90px;
+    left: 87.436px;
+    width: 277.128px;
+    height: 320px;
+}
+
+.home-synergy__logo {
+    position: absolute;
+    top: 190px;
+    left: 156px;
+    width: 142.67px;
+    height: 120px;
+}
+
+.home-synergy__domains {
+    position: absolute;
+    inset: 0;
+    margin: 0;
+    padding: 0;
+}
+
+.home-synergy__domain {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 138.134px;
+    height: 138.229px;
+    font-size: 18px;
+    font-weight: 700;
+    text-align: center;
+    color: #15b29a;
+
+    img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 138.134px;
+        height: 138.229px;
+    }
+
+    span {
+        position: relative;
+    }
+
+    &--construction {
+        top: 0;
+        left: 160.25px;
+        line-height: 1;
+    }
+
+    &--housing {
+        top: 88.3px;
+        left: 2.47px;
+        line-height: 1;
+    }
+
+    &--infrastructure {
+        top: 92.58px;
+        left: 315.55px;
+    }
+
+    &--welfare {
+        top: 361.77px;
+        left: 155.31px;
+    }
+
+    &--equipment {
+        top: 269.19px;
+        left: 0;
+    }
+
+    &--materials {
+        top: 273.47px;
+        left: 313.09px;
+    }
+}
+
+.home-companies {
+    padding-top: 150px;
+    background: #fff;
+    color: #272222;
+}
+
+.home-companies__intro {
+    display: flex;
+    flex-direction: column;
+    gap: 80px;
+    margin-bottom: 100px;
+}
+
+.home-companies__lead {
+    margin: 0;
+    line-height: 2;
+}
+
+.home-companies__list {
+    display: flex;
+    flex-direction: column;
+    gap: 150px;
+    margin: 0;
+    padding: 0;
+}
+
+// Figmaの全幅構成に合わせ、左半分を写真、右半分を企業情報に割り当てます。
+.home-companies__article {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    align-items: start;
+    gap: 60px;
+    padding-right: 60px;
+    scroll-margin-top: 120px;
+
+    @include note {
+        grid-template-columns: 1fr;
+        padding-right: 0;
+    }
+}
+
+.home-companies__main-image {
+    position: relative;
+    // 左右の余白を除く前の画面幅に対して、写真を半幅で配置します。
+    width: calc(100% + 60px);
+    height: 768px;
+    overflow: hidden;
+
+    img {
+        position: absolute;
+        top: -8.86%;
+        left: -62.34%;
+        width: 194.23%;
+        height: 115.37%;
+    }
+
+    @include note {
+        width: 100%;
+    }
+}
+
+.home-companies__details {
+    display: flex;
+    flex-direction: column;
+    gap: 80px;
+    // 写真は画面半幅まで広がるため、企業情報の開始位置を60pxずらします。
+    margin-left: 60px;
+
+    @include note {
+        margin-inline: var(--content-padding);
+    }
+}
+
+.home-companies__profile {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+.home-companies__name {
+    position: relative;
+    display: flex;
+    align-items: center;
+    min-height: 50px;
+    margin: 0;
+    padding-left: 35px;
+    font-size: 28px;
+    font-weight: 700;
+    line-height: 1;
+    color: var(--main-color);
+
+    &::before {
+        position: absolute;
+        inset: 0 auto 0 0;
+        width: 5px;
+        background: linear-gradient(to bottom, var(--main-color) 50%, #272222 50%);
+        content: '';
+    }
+}
+
+.home-companies__summary {
+    padding: 30px 40px;
+    border-radius: 10px;
+    background: #f8f8f8;
+}
+
+.home-companies__summary-heading {
+    width: fit-content;
+    margin: 0 0 15px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid var(--main-color);
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 1;
+    color: var(--main-color);
+}
+
+.home-companies__summary-text p {
+    margin: 0;
+    line-height: 1.8;
+}
+
+.home-companies__overview {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin: 0;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.4;
+}
+
+.home-companies__overview-row {
+    display: grid;
+    grid-template-columns: 110px minmax(0, 1fr);
+    align-items: center;
+    gap: 20px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #cfcfcf;
+
+    dd {
+        margin: 0;
+    }
+
+    a {
+        color: inherit;
+        overflow-wrap: anywhere;
+
+        &:hover,
+        &:focus-visible {
+            text-decoration: underline;
+        }
+    }
+}
+
+.home-companies__representative {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.home-companies__latin {
+    font-family: "Jost", sans-serif;
+}
+
+.home-companies__gallery {
+    display: grid;
+    grid-template-columns: 172fr 58fr 50fr 192fr 88fr;
+    grid-template-rows: 104px 176px 104px 50px 200px;
+    width: 100%;
+    max-width: 560px;
+    margin: 0;
+    padding: 0;
+}
+
+.home-companies__gallery-image {
+    position: relative;
+    overflow: hidden;
+
+    &--worker {
+        grid-column: 1 / 3;
+        grid-row: 2 / 4;
+
+        img {
+            position: absolute;
+            top: -10.61%;
+            left: -67.96%;
+            width: 220.5%;
+            height: 120.96%;
+        }
+    }
+
+    &--site {
+        grid-column: 4 / -1;
+        grid-row: 1 / 3;
+    }
+
+    &--meeting {
+        grid-column: 2 / 5;
+        grid-row: 5;
+
+        img {
+            position: absolute;
+            top: -11.81%;
+            left: -13.26%;
+            width: 115.68%;
+            height: 115.56%;
+        }
+    }
+}
+
+.home-recruit {
+    --recruit-blue: #579df3;
+    position: relative;
+    overflow: hidden;
+    padding-block: 246px 100px;
+    background: #fff;
+}
+
+.home-recruit__card {
+    position: relative;
+    isolation: isolate;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 40px;
+    min-height: 500px;
+    padding: 80px 120px;
+    border-radius: 10px;
+    color: #fff;
+
+    &::before {
+        position: absolute;
+        z-index: -2;
+        top: 80px;
+        left: -54px;
+        width: 100%;
+        height: 100%;
+        background: url('../images/recruit-pattern.webp') left top / 8.4px 8.4px repeat #ddecff;
+        content: '';
+    }
+
+    &::after {
+        position: absolute;
+        z-index: -1;
+        inset: 0;
+        border-radius: inherit;
+        background: var(--recruit-blue);
+        content: '';
+    }
+
+    @include note {
+        flex-wrap: wrap;
+        padding: 60px 40px;
+    }
+}
+
+// Figmaのマスクで、上端と左端にはみ出す装飾文字を切り取ります。
+.home-recruit__decoration {
+    position: absolute;
+    top: -23px;
+    left: -12px;
+    margin: 0;
+    opacity: .1;
+    font-family: "Jost", sans-serif;
+    font-size: 150px;
+    font-weight: 600;
+    line-height: 1;
+    letter-spacing: .06em;
+    white-space: nowrap;
+    mask: url('../images/recruit-title-mask.svg') 12px 23px / 1140px 500px no-repeat;
+    pointer-events: none;
+}
+
+.home-recruit__copy {
+    position: relative;
+    flex: 0 1 457px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 61.095px;
+    padding-top: 40.944px;
+}
+
+.home-recruit__title {
+    width: 304px;
+    height: 100.614px;
+    margin: 0 0 0 3px;
+    font-size: 32px;
+    font-weight: 700;
+    line-height: 1.6;
+    text-align: center;
+}
+
+.home-recruit__description {
+    margin: 29.593px 0 0;
+    font-size: 18px;
+    line-height: 1;
+}
+
+.home-recruit__link {
+    display: flex;
+    flex-shrink: 0;
+    align-items: center;
+    justify-content: space-between;
+    width: 250px;
+    height: 60px;
+    padding: 5px 5px 5px 20px;
+    border-radius: 2px;
+    background: #fff;
+    font-size: 15px;
+    font-weight: 700;
+    line-height: 1;
+    color: var(--recruit-blue);
+
+    &:focus-visible {
+        outline: 2px solid #fff;
+        outline-offset: 4px;
+    }
+}
+
+.home-recruit__link-icon {
+    position: relative;
+    flex: 0 0 50px;
+    height: 50px;
+    border-radius: 2px;
+    background: var(--recruit-blue);
+
+    img {
+        position: absolute;
+        top: 1.967px;
+        left: 10px;
+        width: 30px;
+        height: 29.5922px;
+    }
+}
+
+.home-recruit__photo {
+    position: relative;
+    flex: 0 0 320px;
+    height: 340px;
+    overflow: hidden;
+    border-radius: 10px 10px 10px 40px;
+
+    img {
+        position: absolute;
+        top: -18.9%;
+        left: -98.6%;
+        width: 240.77%;
+        height: 151.09%;
+    }
+}
+
+.home-recruit__tagline {
+    position: relative;
+    left: 50%;
+    width: max-content;
+    margin: 20px 0 0;
+    transform: translateX(-50%);
+    font-family: "Jost", sans-serif;
+    font-size: 150px;
+    line-height: 1;
+    letter-spacing: .06em;
+    color: #bad2f0;
+    white-space: nowrap;
+}
