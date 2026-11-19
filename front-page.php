@@ -106,6 +106,12 @@
             array(
                 'id' => 'company-holdings',
                 'name' => 'サトウ・ホールディングス株式会社',
+                'main_image' => array('src' => 'company-main.webp', 'width' => 2560, 'height' => 1707, 'alt' => 'サトウ・ホールディングス株式会社の外観'),
+                'gallery' => array(
+                    'worker' => array('src' => 'company-worker.webp', 'width' => 1200, 'height' => 800, 'alt' => '現場で働くスタッフ'),
+                    'site' => array('src' => 'company-site.webp', 'width' => 1200, 'height' => 800, 'alt' => '施設の全景'),
+                    'meeting' => array('src' => 'company-meeting.webp', 'width' => 900, 'height' => 600, 'alt' => '図面を使った打ち合わせ'),
+                ),
                 'heading' => 'グループのつながりを支え、次の成長へ。',
                 'paragraphs' => array(
                     'SATO GROUPの持株会社として、グループ各社の経営支援や経営基盤の強化を担っています。それぞれの会社が持つ専門性や強みを活かしながら、事業の枠を越えた連携を促し、グループ全体の持続的な成長と新たな価値の創出を目指します。',
@@ -116,6 +122,12 @@
             array(
                 'id' => 'company-sato',
                 'name' => '佐藤建設株式会社',
+                'main_image' => array('src' => 'company-main.webp', 'width' => 2560, 'height' => 1707, 'alt' => '佐藤建設株式会社の外観'),
+                'gallery' => array(
+                    'worker' => array('src' => 'company-worker.webp', 'width' => 1200, 'height' => 800, 'alt' => '現場で働くスタッフ'),
+                    'site' => array('src' => 'company-site.webp', 'width' => 1200, 'height' => 800, 'alt' => '施設の全景'),
+                    'meeting' => array('src' => 'company-meeting.webp', 'width' => 900, 'height' => 600, 'alt' => '図面を使った打ち合わせ'),
+                ),
                 'heading' => '建設から、その先の街づくりまで。',
                 'paragraphs' => array(
                     '創業以来、岡山に根ざし、建築・土木を中心に地域の街づくりに携わってきたSATO GROUPの中核企業です。',
@@ -134,7 +146,7 @@
                 <li class="home-companies__item">
                     <article class="home-companies__article" id="<?php echo esc_attr($home_company['id']); ?>" aria-labelledby="<?php echo esc_attr($home_company['id'] . '-title'); ?>">
                         <div class="home-companies__main-image">
-                            <img src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/images/company-main.webp" width="2560" height="1707" alt="<?php echo esc_attr($home_company['name'] . 'の外観'); ?>" loading="lazy" decoding="async">
+                            <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/' . $home_company['main_image']['src']); ?>" width="<?php echo esc_attr($home_company['main_image']['width']); ?>" height="<?php echo esc_attr($home_company['main_image']['height']); ?>" alt="<?php echo esc_attr($home_company['main_image']['alt']); ?>" loading="lazy" decoding="async">
                         </div>
                         <div class="home-companies__details">
                             <div class="home-companies__profile">
@@ -179,9 +191,11 @@
                                 </dl>
                             </div>
                             <ul class="home-companies__gallery" aria-label="<?php echo esc_attr($home_company['name'] . 'の写真'); ?>">
-                                <li class="home-companies__gallery-image home-companies__gallery-image--worker"><img src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/images/company-worker.webp" width="1200" height="800" alt="現場で働くスタッフ" loading="lazy" decoding="async"></li>
-                                <li class="home-companies__gallery-image home-companies__gallery-image--site"><img src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/images/company-site.webp" width="1200" height="800" alt="施設の全景" loading="lazy" decoding="async"></li>
-                                <li class="home-companies__gallery-image home-companies__gallery-image--meeting"><img src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/images/company-meeting.webp" width="900" height="600" alt="図面を使った打ち合わせ" loading="lazy" decoding="async"></li>
+                                <?php foreach ($home_company['gallery'] as $home_company_image_position => $home_company_image) : ?>
+                                    <li class="home-companies__gallery-image home-companies__gallery-image--<?php echo esc_attr($home_company_image_position); ?>">
+                                        <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/' . $home_company_image['src']); ?>" width="<?php echo esc_attr($home_company_image['width']); ?>" height="<?php echo esc_attr($home_company_image['height']); ?>" alt="<?php echo esc_attr($home_company_image['alt']); ?>" loading="lazy" decoding="async">
+                                    </li>
+                                <?php endforeach; ?>
                             </ul>
                         </div>
                     </article>
