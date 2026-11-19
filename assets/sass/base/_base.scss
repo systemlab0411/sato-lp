@@ -27,8 +27,8 @@ body {
     @include container-s;
 }
 p {
-    font-weight: 500;
-    font-size: 16px;
+  font-weight: 500;
+  font-size: var(--fs-16);
 }
 a {
     text-decoration: none;
@@ -56,8 +56,8 @@ img {
     font-family: var(--en);
 }
 .text {
-    font-size: 16px;
-    font-weight: 400;
+  font-size: var(--fs-16);
+  font-weight: 400;
 }
 .t-center {
     text-align: center;

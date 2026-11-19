@@ -1,19 +1,24 @@
 {
-    "liveSassCompile.settings.formats": [
-        {
-            "format": "expanded",
-            "extensionName": ".css",
-            "savePath": "/assets/css",
-        },
-        {
-            "format": "compressed",
-            "extensionName": ".min.css",
-            "savePath": "/assets/css",
-        },
-    ],
-    "liveSassCompile.settings.useNewCompiler": true,
-    "liveSassCompile.settings.generateMap": false,
-    // "liveSassCompile.settings.forceBaseDirectory": "/wp-content/themes/mytheme"
+	"liveSassCompile.settings.formats": [
+		{
+			"format": "expanded",
+			"extensionName": ".css",
+			"savePath": "/assets/css"
+		},
+		{
+			"format": "compressed",
+			"extensionName": ".min.css",
+			"savePath": "/assets/css"
+		}
+	],
+	"liveSassCompile.settings.useNewCompiler": true,
+	"liveSassCompile.settings.generateMap": false,
+	// "liveSassCompile.settings.forceBaseDirectory": "/wp-content/themes/mytheme"
 
-    "editor.linkedEditing": true
+	"editor.linkedEditing": true,
+	"[scss]": {
+		"editor.tabSize": 2,
+		"editor.insertSpaces": true,
+		"editor.detectIndentation": false
+	}
 }

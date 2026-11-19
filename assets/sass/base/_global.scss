@@ -1,6 +1,31 @@
 @use "sass:map";
 @use "sass:math";
 
+// 16pxをrem換算の基準とし、769・1366・1920pxの3点を連続した式で結びます。
+@function fluid-pc($min, $base, $max) {
+  $lower-slope: math.div($base - $min, 597px);
+  $upper-slope: math.div($max - $base, 554px);
+  $lower: calc(#{math.div($base - 1366px * $lower-slope, 16px) * 1rem} + #{$lower-slope * 100vw});
+  $upper: calc(#{math.div($base - 1366px * $upper-slope, 16px) * 1rem} + #{$upper-slope * 100vw});
+  $value: max($lower, $upper);
+  @if $lower-slope > $upper-slope {
+    $value: min($lower, $upper);
+  }
+  @return clamp(#{math.div($min, 16px) * 1rem}, #{$value}, #{math.div($max, 16px) * 1rem});
+}
+
+@function heading-size($base) {
+  @return fluid-pc($base * .75, $base, $base * 1.25);
+}
+
+@function body-size($base: 16px) {
+  @return fluid-pc($base * .875, $base, $base * 1.125);
+}
+
+@function space-size($base) {
+  @return fluid-pc($base * .6, $base, $base * 1.25);
+}
+
 // 案件ごとの共通幅。コンテナ幅には左右のpaddingを含みます。
 $viewport-width-base: 1366px;
 $viewport-width-max: 1920px;
@@ -130,120 +155,120 @@ $main-color: map.get($colors, "main-color");
 
 // root変数
 :root {
-    // 通常幅だけ1366〜1920pxで連続拡大。狭い幅は固定です。
-    --content-width: clamp(
-        #{$content-width-base},
-        calc(#{$content-width-base} + (100vw - #{$viewport-width-base}) * #{math.div($content-width-max - $content-width-base, $viewport-width-max - $viewport-width-base)}),
-        #{$content-width-max}
-    );
-    --content-width-sm: #{$content-width-sm};
-    --content-width-s: #{$content-width-s};
-    --content-padding: #{$content-padding};
+  // 通常幅だけ1366〜1920pxで連続拡大。狭い幅は固定です。
+  --content-width: clamp(
+  #{$content-width-base},
+  calc(#{$content-width-base} + (100vw - #{$viewport-width-base}) * #{math.div($content-width-max - $content-width-base, $viewport-width-max - $viewport-width-base)}),
+  #{$content-width-max}
+  );
+  --content-width-sm: #{$content-width-sm};
+  --content-width-s: #{$content-width-s};
+  --content-padding: #{$content-padding};
 
-    // fonts
-    --font-base: "Prompt", "Noto Sans JP", "M PLUS Rounded 1c", sans-serif;
-    --ja: "Noto Sans JP", sans-serif;
-    --ja-sub: "M PLUS Rounded 1c", sans-serif;
-    --en: "Prompt", sans-serif;
-    // line-height
-    --line-h-small: .74;
-    --line-h-none: 1;
-    --line-h-regular: 1.4;
-    --line-h-medium: 1.6;
-    --line-h-large: 1.8; 
-    // letter-spacing
-    --ltr-spa-small: -.04em;
-    --ltr-spa-none: 0;
-    --ltr-spa-regular: .04em;
-    --ltr-spa-medium: .06em;
-    --ltr-spa-large: .1em;
-    // font-weight
-    --fw-100: 100;
-    --fw-200: 200;
-    --fw-300: 300;
-    --fw-400: 400;
-    --fw-500: 500;
-    --fw-600: 600;
-    --fw-700: 700;
-    --fw-800: 800;
-    --fw-900: 900;
-    // font-size 1180で計算
-    --fs-14: 14px;
-    --fs-16: 16px;
-    --fs-24: 24px;
-    --fs-32: clamp(24px, 2.7vw, 32px);
-    --fs-40: clamp(24px, 3.39vw, 40px);
-    --fs-56: clamp(48px, 4.74vw, 56px);
-    --fs-64: clamp(40px, 5.4vw, 64px);
-    --fs-80: clamp(48px, 6.78vw, 80px);
+  // fonts
+  --font-base: "Prompt", "Noto Sans JP", "M PLUS Rounded 1c", sans-serif;
+  --ja: "Noto Sans JP", sans-serif;
+  --ja-sub: "M PLUS Rounded 1c", sans-serif;
+  --en: "Prompt", sans-serif;
+  // line-height
+  --line-h-small: .74;
+  --line-h-none: 1;
+  --line-h-regular: 1.4;
+  --line-h-medium: 1.6;
+  --line-h-large: 1.8;
+  // letter-spacing
+  --ltr-spa-small: -.04em;
+  --ltr-spa-none: 0;
+  --ltr-spa-regular: .04em;
+  --ltr-spa-medium: .06em;
+  --ltr-spa-large: .1em;
+  // font-weight
+  --fw-100: 100;
+  --fw-200: 200;
+  --fw-300: 300;
+  --fw-400: 400;
+  --fw-500: 500;
+  --fw-600: 600;
+  --fw-700: 700;
+  --fw-800: 800;
+  --fw-900: 900;
+  // 1366pxで基準値。ナビ・操作部品には固定のremを個別指定します。
+  --fs-14: 0.875rem;
+  --fs-16: #{body-size(16px)};
+  --fs-24: #{heading-size(24px)};
+  --fs-32: #{heading-size(32px)};
+  --fs-40: #{heading-size(40px)};
+  --fs-56: #{heading-size(56px)};
+  --fs-64: #{heading-size(64px)};
+  --fs-80: #{heading-size(80px)};
 
-    // colors
-    @each $name,$value in $colors {
-        --#{$name}: #{$value};
-    }
+  // colors
+  @each $name,$value in $colors {
+    --#{$name}: #{$value};
+  }
 
-    // nav-height
-    --admin-bar-height: 0px;
-    .admin-bar {
-        --admin-bar-height: 32px;
-        @include sp {
-            --admin-bar-height: 46px;
-        }
-    }
-    --global-nav-height: 80px;
+  // nav-height
+  --admin-bar-height: 0px;
+  .admin-bar {
+    --admin-bar-height: 32px;
     @include sp {
-        --global-nav-height: 60px;
+      --admin-bar-height: 46px;
     }
+  }
+  --global-nav-height: 80px;
+  @include sp {
+    --global-nav-height: 60px;
+  }
+  --global-nav-height-for-anchor: 0px;
+  @include sp {
     --global-nav-height-for-anchor: 0px;
-    @include sp {
-        --global-nav-height-for-anchor: 0px;
-    }
+  }
 
-    // animation
-    --transit-default: .3s;
+  // animation
+  --transit-default: .3s;
 
-    // z-index
-    --z-m-100: -100;
-    --z-m-10: -10;
-    --z-10: 10;
-    --z-100: 100;
-    --z-1000: 1000;
-    --z-10000: 10000;
+  // z-index
+  --z-m-100: -100;
+  --z-m-10: -10;
+  --z-10: 10;
+  --z-100: 100;
+  --z-1000: 1000;
+  --z-10000: 10000;
 
-    // drop-shadow
-    --box-shadow: 2px 2px 12px rgb(117 117 117 / 10%);
+  // drop-shadow
+  --box-shadow: 2px 2px 12px rgb(117 117 117 / 10%);
 
-    // border-radius
-    --bord-r-10: 10px;
-    --bord-r-15: 15px;
-    --bord-r-20: 20px;
-    --bord-r-30: 30px;
-    --bord-r-40: 40px;
-    --bord-r-50: 50px;
-    --bord--r-65: 65px;
+  // border-radius
+  --bord-r-10: 10px;
+  --bord-r-15: 15px;
+  --bord-r-20: 20px;
+  --bord-r-30: 30px;
+  --bord-r-40: 40px;
+  --bord-r-50: 50px;
+  --bord--r-65: 65px;
 
-    // padding-margin
-    --mt-40: 40px;
-    --sec-mt-60: 60px;
-    --sec-mt-80: 80px;
-    --sec-mt-100: clamp(50px, 8.47vw, 100px);
-    --sec-mt-110: 110px;
-    --sec-mt-120: clamp(70px, 10.17vw, 120px);
-    --sec-mt-130: clamp(114px, 11.02vw, 130px);
-    --sec-mt-150: clamp(100px, 12.71vw, 150px);
-    --sec-mt-180: 180px;
-    --sec-mt-200: clamp(100px, 16.95vw,  200px);
+  // padding-margin
+  --mt-40: #{space-size(40px)};
+  --sec-mt-60: #{space-size(60px)};
+  --sec-mt-80: #{space-size(80px)};
+  --sec-mt-100: #{space-size(100px)};
+  --sec-mt-110: #{space-size(110px)};
+  --sec-mt-120: #{space-size(120px)};
+  --sec-mt-130: #{space-size(130px)};
+  --sec-mt-150: #{space-size(150px)};
+  --sec-mt-180: #{space-size(180px)};
+  --sec-mt-200: #{space-size(200px)};
 
-    --oth-mt-80 : clamp(50px, 6.78vw, 80px);
+  --oth-mt-80: #{space-size(80px)};
 
-    --sec-mb-70: 70px;
+  --sec-mb-70: #{space-size(70px)};
 
-    --pl-home-hero: 17.4%;
-    --sec-mt-l: 200px;
+  --pl-home-hero: 17.4%;
+  --sec-mt-l: 200px;
 
-    @include sp {
-        --pl-home-hero: 40px;
-    }
+  @include sp {
+    --pl-home-hero: 40px;
+  }
 }
 
 @mixin ls-lh-min {

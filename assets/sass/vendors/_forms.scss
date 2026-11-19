@@ -35,12 +35,12 @@ span.wpcf7-spinner {
 
 // .contact-form__text {
 //     p {
-//         font-size: 16px;
+//         font-size: 1rem;
 //         text-align: center;
 //         line-height: 2;
 //         letter-spacing: .1em;
 //         @include sp {
-//             font-size: 14px;
+//             font-size: 0.875rem;
 //         }
 //     }
 //     @include sp {
@@ -78,17 +78,17 @@ span.wpcf7-spinner {
 }
 
 .contact-form__table-required-mark {
-    font-size: 14px;
-    font-weight: var(--fw-500);
-    padding: 0.5em 1em;
-    color: var(--white);
-    background-color: var(--main-color);
+  font-size: 0.875rem;
+  font-weight: var(--fw-500);
+  padding: 0.5em 1em;
+  color: var(--white);
+  background-color: var(--main-color);
 }
 .contact-form__optional {
-    font-size: 12px;
-    padding: 0.5em 1em;
-    color: var(--white);
-    background-color: var(--main-color);
+  font-size: 0.75rem;
+  padding: 0.5em 1em;
+  color: var(--white);
+  background-color: var(--main-color);
 }
 
 .contact-form__table-label {
@@ -157,23 +157,20 @@ span.wpcf7-spinner {
         margin-top: 40px;
     }
 }
-.contact-privacy {
-    &__ttl {
-        font-size: 20px;
-    }
-    &__text {
-        padding-top: 20px;
-        font-size: 14px;
-        line-height: 1.4;
-        font-weight: var(--fw-400);
-    }
-    @include sp {
-        &__text {
-            text-align: left;
-            max-width: 550px;
-            margin-inline: auto;
-        }
-    }
+.contact-privacy__ttl {
+  font-size: 1.25rem;
+}
+
+.contact-privacy__text {
+  padding-top: 20px;
+  font-size: .875rem;
+  line-height: 1.4;
+  font-weight: var(--fw-400);
+  @include sp {
+    text-align: left;
+    max-width: 550px;
+    margin-inline: auto;
+  }
 }
 
 .contact-privacy__link {
@@ -183,11 +180,11 @@ span.wpcf7-spinner {
     }
 }
 .wpcf7-list-item-label {
-    font-size: 16px;
-    font-weight: 500;
-    line-height: 1;
-    letter-spacing: .15em;
-    padding-left: 10px;
+  font-size: 1rem;
+  font-weight: 500;
+  line-height: 1;
+  letter-spacing: .15em;
+  padding-left: 10px;
 }
 .contact-form__consent {
     text-align: center;
@@ -218,38 +215,39 @@ span.wpcf7-spinner {
 }
 
 .contact-btn {
-    width: 250px;
-    height: 60px;
-    margin-top: 80px;
-    margin-inline: auto;
-    position: relative;
-    transition: .3s;
-    &:hover {
-        color: var(--white);
-        input {
-            background-color: var(--main-color);
-            border-color: var(--main-color);
-        }
-        .btn__arrow {
-            background-color: var(--white);
-        }
-    }
+  width: 250px;
+  min-height: 60px;
+  margin-top: 80px;
+  margin-inline: auto;
+  position: relative;
+  transition: .3s;
+  &:hover {
+    color: var(--white);
     input {
-        width: 100%;
-        height: 100%;
-        border-radius: 30px;
-        border: 1px solid var(--gray-2);
-        background-color: var(--white);
-        font-size: var(--fs-14);
-        font-weight: var(--fw-500);
-        align-items: center;
-        padding-left: 30px;
-        text-align: left;
-        transition: .3s;
+      background-color: var(--main-color);
+      border-color: var(--main-color);
     }
-    @include sp {
-        margin-top: 50px;
+    .btn__arrow {
+      background-color: var(--white);
     }
+  }
+  input {
+    width: 100%;
+    min-height: 60px;
+    padding-block: 15px;
+    border-radius: 30px;
+    border: 1px solid var(--gray-2);
+    background-color: var(--white);
+    font-size: var(--fs-14);
+    font-weight: var(--fw-500);
+    align-items: center;
+    padding-left: 30px;
+    text-align: left;
+    transition: .3s;
+  }
+  @include sp {
+    margin-top: 50px;
+  }
 }
 .btn-contact-prev {
     input {
@@ -270,45 +268,46 @@ span.wpcf7-spinner {
     padding-top: var(--sec-mt-80);
 }
 .contact-tel {
-    display: block;
-    width: fit-content;
-    margin-inline: auto;
-    font-size: 48px;
-    line-height: 1;
-    letter-spacing: 0;
-    color: #000;
-    font-weight: var(--fw-500);
-    margin-top: 30px;
-    &__en {
-        font-size: 40px;
-        padding-right: 5px;
-        font-weight: var(--fw-500);
-    }
-    @include sp {
-        font-size: 36px;
-        &__en {
-            font-size: 28px;
-        }
-    }
+  display: block;
+  width: fit-content;
+  margin-inline: auto;
+  font-size: 3rem;
+  line-height: 1;
+  letter-spacing: 0;
+  color: #000;
+  font-weight: var(--fw-500);
+  margin-top: 30px;
+  @include sp {
+    font-size: 2.25rem;
+  }
 }
-.contact-tel {
-    &__info-area {
-        display: flex;
-        width: fit-content;
-        margin-inline: auto;
-        gap: 5px;
-        margin-top: 5px;
-    }
-    &__time {
-        font-size: 20px;
-        font-weight: var(--fw-400);
-        line-height: 1;
-    }
-    &__date {
-        font-size: 14px;
-        font-weight: var(--fw-400);
-        line-height: 24px;
-    }
+.contact-tel__en {
+  font-size: 2.5rem;
+  padding-right: 5px;
+  font-weight: var(--fw-500);
+  @include sp {
+    font-size: 1.75rem;
+  }
+}
+
+.contact-tel__info-area {
+  display: flex;
+  width: fit-content;
+  margin-inline: auto;
+  gap: 5px;
+  margin-top: 5px;
+}
+
+.contact-tel__time {
+  font-size: 1.25rem;
+  font-weight: var(--fw-400);
+  line-height: 1;
+}
+
+.contact-tel__date {
+  font-size: 0.875rem;
+  font-weight: var(--fw-400);
+  line-height: 1.7142857143;
 }
 .contact-comp__btn {
     margin-top: 40px;
@@ -342,12 +341,12 @@ span.wpcf7-spinner {
    ラジオボタンの丸ポッチを完全にカスタム
    ========================================================================== */
 .wpcf7-radio {
-    .wpcf7-list-item-label {
-        font-size: 16px;
-        font-weight: 500;
-        letter-spacing: .15em;
-        padding-left: 40px;
-    }
+  .wpcf7-list-item-label {
+    font-size: 1rem;
+    font-weight: 500;
+    letter-spacing: .15em;
+    padding-left: 40px;
+  }
 }
 .wpcf7-list-item {
     margin: 12px 16px 0 0;

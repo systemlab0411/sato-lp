@@ -54,110 +54,112 @@
 }
 
 .header__nav-list {
-    display: flex;
-    flex-shrink: 0;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 40px;
-    margin: 0;
-    padding: 0;
+  max-width: 100%;
+  display: flex;
+  flex-shrink: 0;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 40px;
 }
 
 .header__nav-item {
-    font-size: 16px;
-    line-height: 1;
-    letter-spacing: .06em;
+  max-width: 100%;
+  font-size: 1rem;
+  line-height: 1;
+  letter-spacing: .06em;
 }
 
 .header__nav-link {
-    position: relative;
-    display: flex;
-    align-items: center;
-    width: fit-content;
-    height: 16px;
-    padding-inline: 5px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: fit-content;
+  min-height: 1rem;
+  padding-inline: 5px;
 
-    &--top {
-        isolation: isolate;
-        min-width: 40px;
-        font-family: "Jost", sans-serif;
-        font-weight: 400;
+  &--top {
+    isolation: isolate;
+    min-width: 40px;
+    font-family: "Jost", sans-serif;
+    font-weight: 400;
 
-        &.header__nav-link--current::before {
-            position: absolute;
-            top: 9px;
-            left: 0;
-            z-index: -1;
-            width: 40px;
-            height: 10px;
-            background: rgb(21 178 154 / 20%);
-            content: '';
-        }
+    &.header__nav-link--current::before {
+      position: absolute;
+      top: 9px;
+      left: 0;
+      z-index: -1;
+      width: 40px;
+      height: 10px;
+      background: rgb(21 178 154 / 20%);
+      content: '';
+    }
+  }
+
+  &--companies {
+    gap: 19px;
+    cursor: pointer;
+    list-style: none;
+
+    &::-webkit-details-marker {
+      display: none;
     }
 
-    &--companies {
-        gap: 19px;
-        cursor: pointer;
-        list-style: none;
-
-        &::-webkit-details-marker {
-            display: none;
-        }
-
-        img {
-            width: 11px;
-            height: 11px;
-            object-fit: contain;
-        }
+    img {
+      width: 11px;
+      height: 11px;
+      object-fit: contain;
     }
+  }
 }
 
 .header__nav-companies {
-    margin: 15px 0 0;
-    padding: 0;
+  margin: 15px 0 0;
 
-    li {
-        position: relative;
-        height: 38px;
-        font-size: 15px;
-        line-height: 2.5;
-        letter-spacing: .06em;
-        white-space: nowrap;
+  li {
+    position: relative;
+    min-height: 2.375rem;
+    font-size: 0.9375rem;
+    line-height: 2.5;
+    letter-spacing: .06em;
+    overflow-wrap: anywhere;
 
-        &::before {
-            position: absolute;
-            top: 18px;
-            left: .335px;
-            width: 4.33013px;
-            height: 5px;
-            background: url('../images/nav-company-dot.svg') no-repeat center;
-            content: '';
-        }
+    &::before {
+      position: absolute;
+      top: 18px;
+      left: .335px;
+      width: 4.33013px;
+      height: 5px;
+      background: url('../images/nav-company-dot.svg') no-repeat center;
+      content: '';
     }
+  }
 
-    a {
-        display: block;
-        padding-left: 15px;
-    }
+  a {
+    display: block;
+    padding-left: 15px;
+  }
 }
 
 .header__nav-contact {
-    display: flex;
-    flex-shrink: 0;
-    align-items: center;
-    justify-content: space-between;
-    width: 150px;
-    min-height: 50px;
-    padding-bottom: 10px;
-    background: url('../images/nav-contact-line.svg') no-repeat left bottom;
-    font-size: 15px;
-    font-weight: 500;
-    line-height: 1;
-    letter-spacing: .06em;
+  max-width: 100%;
+  display: flex;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: space-between;
+  min-width: 150px;
+  width: fit-content;
+  gap: 10px;
+  min-height: 50px;
+  padding-bottom: 10px;
+  background: url('../images/nav-contact-line.svg') no-repeat left bottom;
+  font-size: 0.9375rem;
+  font-weight: 500;
+  line-height: 1;
+  letter-spacing: .06em;
 
-    img {
-        width: 40px;
-        height: 40px;
-        object-fit: contain;
-    }
+  img {
+    width: 40px;
+    height: 40px;
+    object-fit: contain;
+  }
 }
