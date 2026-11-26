@@ -4,10 +4,10 @@
     <section class="home-hero" aria-labelledby="hero-title">
         <div class="home-hero__photos" aria-hidden="true">
             <div class="home-hero__photo home-hero__photo--left">
-                <img src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/images/hero-left.webp" width="4096" height="2731" alt="" fetchpriority="high">
+                <img src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/images/hero-left.webp" width="1368" height="1536" alt="" fetchpriority="high">
             </div>
             <div class="home-hero__photo home-hero__photo--right">
-                <img src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/images/hero-right.webp" width="3500" height="2333" alt="">
+                <img src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/images/hero-right.webp" width="1368" height="1536" alt="">
             </div>
         </div>
         <div class="home-hero__copy">
@@ -106,11 +106,11 @@
             array(
                 'id' => 'company-holdings',
                 'name' => 'サトウ・ホールディングス株式会社',
-                'main_image' => array('src' => 'company-main.webp', 'width' => 2560, 'height' => 1707, 'alt' => 'サトウ・ホールディングス株式会社の外観'),
+                'main_image' => array('src' => 'company-main.webp', 'width' => 1366, 'height' => 1536, 'alt' => 'サトウ・ホールディングス株式会社の外観'),
                 'gallery' => array(
-                    'worker' => array('src' => 'company-worker.webp', 'width' => 1200, 'height' => 800, 'alt' => '現場で働くスタッフ'),
-                    'site' => array('src' => 'company-site.webp', 'width' => 1200, 'height' => 800, 'alt' => '施設の全景'),
-                    'meeting' => array('src' => 'company-meeting.webp', 'width' => 900, 'height' => 600, 'alt' => '図面を使った打ち合わせ'),
+                    'worker' => array('src' => 'company-worker.webp', 'width' => 460, 'height' => 560, 'alt' => '現場で働くスタッフ'),
+                    'site' => array('src' => 'company-site.webp', 'width' => 560, 'height' => 560, 'alt' => '施設の全景'),
+                    'meeting' => array('src' => 'company-meeting.webp', 'width' => 600, 'height' => 400, 'alt' => '図面を使った打ち合わせ'),
                 ),
                 'heading' => 'グループのつながりを支え、次の成長へ。',
                 'paragraphs' => array(
@@ -122,11 +122,11 @@
             array(
                 'id' => 'company-sato',
                 'name' => '佐藤建設株式会社',
-                'main_image' => array('src' => 'company-main.webp', 'width' => 2560, 'height' => 1707, 'alt' => '佐藤建設株式会社の外観'),
+                'main_image' => array('src' => 'company-main.webp', 'width' => 1366, 'height' => 1536, 'alt' => '佐藤建設株式会社の外観'),
                 'gallery' => array(
-                    'worker' => array('src' => 'company-worker.webp', 'width' => 1200, 'height' => 800, 'alt' => '現場で働くスタッフ'),
-                    'site' => array('src' => 'company-site.webp', 'width' => 1200, 'height' => 800, 'alt' => '施設の全景'),
-                    'meeting' => array('src' => 'company-meeting.webp', 'width' => 900, 'height' => 600, 'alt' => '図面を使った打ち合わせ'),
+                    'worker' => array('src' => 'company-worker.webp', 'width' => 460, 'height' => 560, 'alt' => '現場で働くスタッフ'),
+                    'site' => array('src' => 'company-site.webp', 'width' => 560, 'height' => 560, 'alt' => '施設の全景'),
+                    'meeting' => array('src' => 'company-meeting.webp', 'width' => 600, 'height' => 400, 'alt' => '図面を使った打ち合わせ'),
                 ),
                 'heading' => '建設から、その先の街づくりまで。',
                 'paragraphs' => array(
@@ -218,7 +218,7 @@
                     </a>
                 </div>
                 <div class="home-recruit__photo">
-                    <img src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/images/recruit-staff.webp" width="1800" height="1200" alt="ヘルメットを着用し現場で働くスタッフ" loading="lazy" decoding="async">
+                    <img src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/images/recruit-staff.webp" width="640" height="680" alt="ヘルメットを着用し現場で働くスタッフ" loading="lazy" decoding="async">
                 </div>
             </div>
         </div>

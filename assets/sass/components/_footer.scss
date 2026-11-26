@@ -6,7 +6,6 @@
   z-index: 110;
   overflow: hidden;
   background: #fbfbfb;
-  font-family: "Zen Kaku Gothic New", sans-serif;
   color: var(--main-color);
 
   a {
@@ -84,13 +83,11 @@
 }
 
 .footer__number {
-    font-family: "Jost", sans-serif;
     font-weight: 500;
 }
 
 .footer__phone {
     margin-top: 10px;
-    font-family: "Jost", sans-serif;
 
     p {
         line-height: 1.6;
@@ -186,7 +183,6 @@
 }
 
 .footer__copyright {
-  font-family: "Jost", sans-serif;
   font-size: 0.875rem;
   font-weight: 400;
   line-height: 1;

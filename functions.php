@@ -52,8 +52,6 @@ function my_enqueue_scripts() {
     //wp_enqueue_style('sippori-mincho-regular', get_template_directory_uri() . '/assets/fonts/shippori-mincho-v15-japanese-regular.woff2', array(), null, "all");
 
 
-    //GoogleFonts barlow-condensed
-    wp_enqueue_style('barlow-condensed', 'https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@300;400;500&display=swap');
     //GoogleFonts work-sans
     // wp_enqueue_style('work-sans', 'https://fonts.googleapis.com/css2?family=Work+Sans:wght@600&display=swap');
     //slick

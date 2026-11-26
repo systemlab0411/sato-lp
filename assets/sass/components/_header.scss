@@ -3,7 +3,6 @@
 .header {
     --header-green: #15b29a;
     --header-text: #272222;
-    font-family: "Zen Kaku Gothic New", sans-serif;
     color: var(--header-text);
 
     a {
@@ -80,7 +79,6 @@
   &--top {
     isolation: isolate;
     min-width: 40px;
-    font-family: "Jost", sans-serif;
     font-weight: 400;
 
     &.header__nav-link--current::before {
