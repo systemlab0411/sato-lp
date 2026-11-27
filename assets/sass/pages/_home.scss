@@ -48,13 +48,13 @@
 }
 
 .home-hero__copy {
-	position: absolute;
-	top: 50%;
-	left: calc(50% - 252px);
-	width: max-content;
-	max-width: calc(50% + 252px - var(--content-padding));
-	transform: translateY(-50%);
-	color: #fff;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: max-content;
+  max-width: calc(100% - var(--content-padding) * 2);
+  transform: translate(-50%, -50%);
+  color: #fff;
 }
 
 .home-hero__title {
