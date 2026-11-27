@@ -3,15 +3,28 @@
 .contact-page .contact-form {
   // ナビの左余白30px + お問い合わせリンク150px + 間隔30px。
   padding-left: 210px;
+  @include note {
+    padding-left: 0;
+    padding-bottom: 80px;
+  }
 }
 
 .contact-page .contact-form {
   padding-top: space-size(80px);
+  @include note {
+    padding-top: 48px;
+  }
+  @include sp {
+    padding-top: sp-space-size(32px);
+  }
 }
 
 .contact-page__lead-title {
   font-size: heading-size(20px);
   line-height: 1.6;
+  @include sp {
+    font-size: sp-heading-size(18px);
+  }
 }
 
 .contact-page__lead p {
@@ -23,5 +36,31 @@
   text-align: center;
   p {
     line-height: 2;
+  }
+}
+
+.contact-page .contact-form__wrap {
+  @include note {
+    padding-top: 48px;
+  }
+  @include sp {
+    padding-top: sp-space-size(32px);
+  }
+}
+
+.contact-page__lead p,
+.contact-page .contact-form__text p {
+  @include sp {
+    font-size: sp-body-size(16px);
+    text-align: left;
+  }
+}
+
+.contact-page .contact-form__thanks-actions {
+  @include note {
+    margin-top: 40px;
+    .contact-btn {
+      margin-top: 0;
+    }
   }
 }

@@ -26,6 +26,35 @@
   @return fluid-pc($base * .6, $base, $base * 1.25);
 }
 
+@function to-rem($value) {
+  @return math.div($value, 16px) * 1rem;
+}
+
+// 360・390・768pxを計算点とし、範囲外では上下限を維持します。
+@function fluid-sp($min, $base, $max) {
+  $lower-slope: math.div($base - $min, 30px);
+  $upper-slope: math.div($max - $base, 378px);
+  $lower: calc(#{to-rem($base - 390px * $lower-slope)} + #{$lower-slope * 100vw});
+  $upper: calc(#{to-rem($base - 390px * $upper-slope)} + #{$upper-slope * 100vw});
+  $value: max($lower, $upper);
+  @if $lower-slope > $upper-slope {
+    $value: min($lower, $upper);
+  }
+  @return clamp(#{to-rem($min)}, #{$value}, #{to-rem($max)});
+}
+
+@function sp-heading-size($base) {
+  @return fluid-sp($base * math.div(360, 390), $base, $base * 1.25);
+}
+
+@function sp-body-size($base: 16px) {
+  @return fluid-sp($base * math.div(360, 390), $base, $base * 1.125);
+}
+
+@function sp-space-size($base) {
+  @return fluid-sp($base * math.div(360, 390), $base, $base * 1.25);
+}
+
 // 案件ごとの共通幅。コンテナ幅には左右のpaddingを含みます。
 $viewport-width-base: 1366px;
 $viewport-width-max: 1920px;

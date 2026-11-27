@@ -28,6 +28,12 @@
   grid-template-columns: 37.45614% minmax(0, 1fr);
   padding-top: space-size(50px);
   padding-bottom: space-size(88px);
+  @include note {
+    grid-template-columns: 1fr;
+    gap: 32px;
+    padding-top: 40px;
+    padding-bottom: 48px;
+  }
 }
 
 .footer__logo {
@@ -59,6 +65,17 @@
     background-color: var(--main-color);
     content: '';
   }
+  @include note {
+    min-height: 0;
+    gap: 32px;
+    padding-bottom: 32px;
+    &::after {
+      right: 0;
+    }
+  }
+  @include sp {
+    flex-direction: column;
+  }
 }
 
 .footer__company {
@@ -70,6 +87,9 @@
 .footer__name {
     font-weight: 700;
     line-height: 1;
+  @include note {
+    line-height: 1.6;
+  }
 }
 
 .footer__address {
@@ -80,6 +100,12 @@
     font-size: 1rem;
     line-height: 1;
     overflow-wrap: anywhere;
+  }
+  @include note {
+    margin-top: 16px;
+    p {
+      line-height: 1.8;
+    }
   }
 }
 
@@ -105,10 +131,22 @@
   font-weight: 500;
   line-height: 1;
   letter-spacing: .06em;
+  @include note {
+    gap: 8px;
+    a {
+      display: flex;
+      align-items: center;
+      min-height: 44px;
+      line-height: 1.6;
+    }
+  }
 }
 
 .footer__companies {
   padding-top: space-size(50px);
+  @include note {
+    padding-top: 24px;
+  }
 }
 
 .footer__company-list {
@@ -121,6 +159,20 @@
   width: 100%;
   // 3列分の間隔が広がっても、リンクを収める幅を維持します。
   max-width: calc(650px + (var(--company-column-gap) - 40px) * 2);
+  @include note {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 12px 24px;
+    max-width: none;
+  }
+  @include sp {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    column-gap: 16px;
+  }
+  @include sp-ss {
+    grid-template-columns: 1fr;
+    row-gap: 0;
+  }
 }
 
 .footer__company-item {
@@ -133,6 +185,10 @@
   // 次のリンクが始まる位置を揃える項目に指定します。
   &--min-width {
     min-width: 175px;
+  }
+  @include note {
+    min-width: 0;
+    font-size: 0.875rem;
   }
 }
 
@@ -162,6 +218,22 @@
   }
   &:focus-visible {
     --external-icon-filter: grayscale(1) brightness(.65) contrast(1000%);
+  }
+  @include note {
+    align-items: center;
+    min-height: 44px;
+    line-height: 1.6;
+    white-space: normal;
+    &::before {
+      top: 15px;
+      bottom: auto;
+    }
+  }
+  @include sp-ss {
+    min-height: 36px;
+    &::before {
+      top: calc(50% - 7px);
+    }
   }
 }
 
@@ -193,6 +265,9 @@
   padding: space-size(28px) space-size(40px) space-size(28px) 0;
   background: url('../images/footer-divider.svg') repeat-x left top;
   text-align: center;
+  @include note {
+    padding: 24px var(--content-padding);
+  }
 }
 
 .footer__copyright {
@@ -203,5 +278,9 @@
 
   small {
     font-size: inherit;
+  }
+  @include note {
+    font-size: 0.75rem;
+    line-height: 1.8;
   }
 }

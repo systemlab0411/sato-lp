@@ -5,6 +5,12 @@
   padding-top: space-size(80px);
   padding-bottom: space-size(150px);
   padding-left: 210px;
+  @include note {
+    padding: 48px 0 80px;
+  }
+  @include sp {
+    padding-top: sp-space-size(32px);
+  }
 }
 
 .notfound__inner {
@@ -15,7 +21,8 @@
   font-size: heading-size(20px);
   line-height: 2;
   @include sp {
-    font-size: 18px;
+    font-size: sp-heading-size(20px);
+    line-height: 1.8;
   }
 }
 
@@ -24,8 +31,8 @@
   line-height: 2;
   margin-top: 30px;
   @include sp {
-    font-size: 14px;
-    padding: 0 20px;
+    font-size: sp-body-size(16px);
+    padding: 0;
     br {
       display: none;
     }

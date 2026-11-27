@@ -7,12 +7,19 @@
     @include sp {
         padding-top: 120px;
     }
+  @include note {
+    padding-top: 64px;
+    text-align: center;
+  }
 }
 .u-page__ttl-wrap {
     max-width: 930px;
     width: 100%;
     margin-inline: auto;
     padding-left: 30px;
+  @include note {
+    padding-left: 0;
+  }
 }
 .u-page__ttl-en {
     font-size: clamp(56px, 10.17vw, 120px);
@@ -23,6 +30,15 @@
     color: var(--main-color);
     // アニメーション用JSが無効でも見出しを表示する。
     opacity: 1;
+  @include note {
+    margin-top: 16px;
+    font-size: heading-size(56px);
+    line-height: 1.1;
+    overflow-wrap: anywhere;
+  }
+  @include sp {
+    font-size: sp-heading-size(32px);
+  }
     .char {
         display: inline-block;
         will-change: transform, opacity;
