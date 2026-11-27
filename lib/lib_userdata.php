@@ -6,7 +6,7 @@
 function get_ownerData($info)
 {
     if ($info == "companyName") {
-        echo "会社名";
+        echo "サトウ・ホールディングス株式会社";
     } elseif ($info == "nameEng") {
         echo "会社名英語";
     } elseif ($info == "ceoName") {
@@ -16,15 +16,15 @@ function get_ownerData($info)
     } elseif ($info == "myself") {
         echo "弊社";
     } elseif ($info == "postalCode") {
-        echo "〒郵便番号";
+        echo "〒709-4316";
     } elseif ($info == "address") {
-        echo "住所";
+        echo "岡山県勝田郡勝央町勝間田225番地27";
     } elseif ($info == "areaCode") {
-        echo "000";
+        echo "0868";
     } elseif ($info == "cityCode") {
-        echo "000";
+        echo "75";
     } elseif ($info == "subscriberNumber") {
-        echo "0000";
+        echo "3438";
     }elseif ($info == "eMail") {
         echo "sample@email";
     } elseif ($info == "tel") {

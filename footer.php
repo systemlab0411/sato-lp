@@ -20,7 +20,7 @@ $footer_company_links = array(
                 <div class="footer__company">
                     <p class="footer__name">サトウ・ホールディングス株式会社</p>
                     <address class="footer__address">
-                        <p>〒<span class="footer__number">709-4316</span> 勝田郡勝央町勝間田<span class="footer__number">225</span>番地<span class="footer__number">27</span></p>
+                        <p>〒<span class="footer__number">709-4316</span> 岡山県勝田郡勝央町勝間田<span class="footer__number">225</span>番地<span class="footer__number">27</span></p>
                         <div class="footer__phone">
                             <p>TEL <a href="<?php echo esc_url('tel:0868753438'); ?>">0868-75-3438</a></p>
                             <p>FAX 0868-75-6292</p>
