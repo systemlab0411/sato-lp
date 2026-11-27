@@ -592,25 +592,25 @@ select option { color: black; } //<!-- 通常の項目の色 -->
     color: var(--gray);
     transition: .3s;
 }
-@media(hover: hover) {
-    .post-pagination a {
-        position: relative;
-        &::after {
-            position: absolute;
-            bottom: 0;
-            content: "";
-            width: 100%;
-            height: 1px;
-            background-color: var(--main-color);
-            transform: scale(0, 1);
-            transform-origin: center top;
-            transition: .3s;
-        }
-        &:hover::after {
-            transform: scale(1);
-        }
+.post-pagination a {
+  @include hover-capable {
+    position: relative;
+    &::after {
+      position: absolute;
+      bottom: 0;
+      content: "";
+      width: 100%;
+      height: 1px;
+      background-color: var(--main-color);
+      transform: scale(0, 1);
+      transform-origin: center top;
+      transition: .3s;
+    }
+    &:hover::after {
+      transform: scale(1);
     }
   }
+}
 
 .post-pagination__pager--current {
     color: var(--main-color);

@@ -118,6 +118,18 @@ $breakpoint-desk: 1280px;
     }
 }
 
+@mixin hover-capable {
+  @media (hover: hover) {
+    @content;
+  }
+}
+
+@mixin reduced-motion {
+  @media (prefers-reduced-motion: reduce) {
+    @content;
+  }
+}
+
 @mixin container {
     width: 100%;
     max-width: var(--content-width);
@@ -308,7 +320,7 @@ $main-color: map.get($colors, "main-color");
 
 @mixin link-color($color: var(--main-color)) {
   transition: color .3s;
-  @media (hover: hover) {
+  @include hover-capable {
     &:hover {
       color: $color;
     }

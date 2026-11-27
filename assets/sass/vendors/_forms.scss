@@ -286,7 +286,7 @@ span.wpcf7-spinner {
   &--back {
     --contact-button-accent: var(--black);
   }
-  @media (hover: hover) {
+  @include hover-capable {
     &:hover {
       --contact-button-background: #fff;
       --contact-button-color: var(--contact-button-accent);

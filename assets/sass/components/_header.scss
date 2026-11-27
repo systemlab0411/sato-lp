@@ -115,7 +115,7 @@
       object-fit: contain;
     }
   }
-  @media (prefers-reduced-motion: reduce) {
+  @include reduced-motion {
     &--current::before {
       animation: none;
     }
@@ -197,7 +197,7 @@
     transform-origin: left;
     transition: transform .3s;
   }
-  @media (hover: hover) {
+  @include hover-capable {
     &:hover {
       --contact-line-scale: 1;
       --contact-icon-background: var(--main-color);
@@ -211,7 +211,7 @@
     --contact-arrow-animation: header-contact-arrow .3s ease both;
     --contact-arrow-filter: brightness(0) invert(1);
   }
-  @media (prefers-reduced-motion: reduce) {
+  @include reduced-motion {
     &::after {
       transition: none;
     }
@@ -231,7 +231,7 @@
     transition: filter .3s;
     animation: var(--contact-arrow-animation);
   }
-  @media (prefers-reduced-motion: reduce) {
+  @include reduced-motion {
     transition: none;
     img {
       transition: none;
@@ -455,7 +455,7 @@
 
 .header--menu-ready .header__nav,
 .header__toggle-icon span {
-  @media (prefers-reduced-motion: reduce) {
+  @include reduced-motion {
     transition: none;
   }
 }

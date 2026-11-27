@@ -211,7 +211,7 @@
     background: linear-gradient(to bottom, var(--main-color) 50%, #272222 50%);
     content: '';
   }
-  @media (hover: hover) {
+  @include hover-capable {
     &:hover {
       --external-icon-filter: grayscale(1) brightness(.65) contrast(1000%);
     }
