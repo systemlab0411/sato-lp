@@ -715,6 +715,12 @@ img {
     column-gap: 16px;
   }
 }
+@media (max-width: 450px) {
+  .footer__company-list {
+    grid-template-columns: 1fr;
+    row-gap: 0;
+  }
+}
 
 .footer__company-item {
   max-width: 100%;
@@ -770,6 +776,14 @@ img {
   .footer__company-link::before {
     top: 15px;
     bottom: auto;
+  }
+}
+@media (max-width: 450px) {
+  .footer__company-link {
+    min-height: 36px;
+  }
+  .footer__company-link::before {
+    top: calc(50% - 7px);
   }
 }
 

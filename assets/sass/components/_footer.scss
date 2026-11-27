@@ -169,6 +169,10 @@
     grid-template-columns: repeat(2, minmax(0, 1fr));
     column-gap: 16px;
   }
+  @include sp-ss {
+    grid-template-columns: 1fr;
+    row-gap: 0;
+  }
 }
 
 .footer__company-item {
@@ -223,6 +227,12 @@
     &::before {
       top: 15px;
       bottom: auto;
+    }
+  }
+  @include sp-ss {
+    min-height: 36px;
+    &::before {
+      top: calc(50% - 7px);
     }
   }
 }
