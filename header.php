@@ -38,7 +38,9 @@
         </ul>
         <a class="header__nav-contact" href="<?php echo esc_url(home_url('/contact/')); ?>">
             <span>お問い合わせ</span>
-            <img src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/images/nav-contact-arrow.svg" width="40" height="40" alt="">
+            <span class="header__nav-contact-icon" aria-hidden="true">
+                <img src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/images/nav-contact-arrow.svg" width="40" height="40" alt="">
+            </span>
         </a>
     </nav>
 </header>

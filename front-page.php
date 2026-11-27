@@ -335,7 +335,7 @@
                     </div>
                     <a class="home-recruit__link" href="<?php echo esc_url('https://satoukensetsu-recruit.jp/'); ?>" target="_blank" rel="noopener noreferrer" aria-label="佐藤建設の採用サイト（別タブで開く）">
                         <span>採用サイトはこちら</span>
-                        <span class="home-recruit__link-icon"><img src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/images/recruit-external-link.svg" width="30" height="29.5922" alt=""></span>
+                        <span class="home-recruit__link-icon" aria-hidden="true"></span>
                     </a>
                 </div>
                 <div class="home-recruit__photo">

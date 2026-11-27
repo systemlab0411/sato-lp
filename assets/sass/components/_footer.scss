@@ -10,6 +10,7 @@
 
   a {
     color: inherit;
+    @include link-color(var(--black));
   }
 
   a:focus-visible {
@@ -154,7 +155,14 @@
     background: linear-gradient(to bottom, var(--main-color) 50%, #272222 50%);
     content: '';
   }
-
+  @media (hover: hover) {
+    &:hover {
+      --external-icon-filter: grayscale(1) brightness(.65) contrast(1000%);
+    }
+  }
+  &:focus-visible {
+    --external-icon-filter: grayscale(1) brightness(.65) contrast(1000%);
+  }
 }
 
 .footer__company-label {
@@ -175,6 +183,9 @@
         width: 18.5px;
         height: 15.5px;
         object-fit: contain;
+        // SVGの白い塗りを維持し、緑の線だけを黒に変えます。
+        filter: var(--external-icon-filter, none);
+        transition: filter .3s;
     }
 }
 

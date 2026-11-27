@@ -275,3 +275,15 @@ $main-color: map.get($colors, "main-color");
     letter-spacing: var(--ltr-spa-small);
     line-height: var(--line-h-small);
 }
+
+@mixin link-color($color: var(--main-color)) {
+  transition: color .3s;
+  @media (hover: hover) {
+    &:hover {
+      color: $color;
+    }
+  }
+  &:focus-visible {
+    color: $color;
+  }
+}
