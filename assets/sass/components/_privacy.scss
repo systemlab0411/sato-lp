@@ -9,12 +9,26 @@
   p {
     line-height: 2;
   }
+  @include note {
+    padding: 48px 0 80px;
+    overflow-wrap: anywhere;
+  }
+  @include sp {
+    padding-top: sp-space-size(32px);
+    p {
+      font-size: sp-body-size(16px);
+    }
+  }
 }
 
 .privacy__title {
   margin-top: 2em;
   font-size: heading-size(20px);
   line-height: 1.6;
+  @include sp {
+    margin-top: sp-space-size(32px);
+    font-size: sp-heading-size(18px);
+  }
 }
 
 .privacy__title + p {

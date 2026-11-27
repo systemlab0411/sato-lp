@@ -4,6 +4,9 @@
 .archive__main {
     background-color: var(--white);
     padding-top: var(--sec-mt-150);
+  @include note {
+    padding-top: 48px;
+  }
 }
 .archive__container {
     display: grid;
@@ -289,7 +292,7 @@ select option { color: black; } //<!-- 通常の項目の色 -->
     align-items: flex-start;
     margin-bottom: clamp(80px, 10.7vw, 145px);
     gap: 4%;
-    @include sp {
+    @include note {
         display: block;
     }
 }
@@ -299,6 +302,7 @@ select option { color: black; } //<!-- 通常の項目の色 -->
     padding-block: var(--sec-mt-150);
 }
 .single__main {
+  min-width: 0;
     @include sp {
         margin-bottom: 100px;
     }
@@ -360,6 +364,21 @@ select option { color: black; } //<!-- 通常の項目の色 -->
 }
 
 .single__content {
+  @include note {
+    overflow-wrap: anywhere;
+    img {
+      height: auto;
+    }
+    iframe,
+    video {
+      max-width: 100%;
+    }
+    table {
+      display: block;
+      max-width: 100%;
+      overflow-x: auto;
+    }
+  }
     margin-top: 5%;
     li {
         list-style: disc;
@@ -426,14 +445,84 @@ select option { color: black; } //<!-- 通常の項目の色 -->
     gap: 5%;
     transition: all .3s;
     justify-content: center;
+  @include note {
+    flex-wrap: wrap;
+  }
     @include sp-ss {
         display: grid;
         grid-template-rows: 1fr 1fr;
         gap: 1em;
     }
   }
+.page-header {
+  @include note {
+    padding-top: 64px;
+    padding-bottom: 48px;
+    text-align: center;
+  }
+}
+
+.archive {
+  @include note {
+    padding-top: 48px;
+  }
+}
+
+.page-header__wrap {
+  @include note {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    align-items: center;
+  }
+}
+
+.page-header__title {
+  @include note {
+    font-size: 1.5rem;
+  }
+}
+
+.page-header__title-en {
+  @include note {
+    font-size: heading-size(56px);
+    line-height: 1.1;
+    color: var(--main-color);
+    overflow-wrap: anywhere;
+  }
+  @include sp {
+    font-size: sp-heading-size(32px);
+  }
+}
+
+.archive-list__body {
+  @include note {
+    min-width: 0;
+    overflow-wrap: anywhere;
+  }
+}
+
+.archive__sidebar {
+  @include note {
+    width: 100%;
+    max-width: 630px;
+    padding-inline: 0;
+  }
+}
+
+.single__main .btn {
+  @include note {
+    max-width: 100%;
+  }
+}
+
 .single__pagination {
     gap: 10%;
+  @include sp {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
 }
 .single__tag-links {
     gap: 10px 15px;
@@ -446,6 +535,9 @@ select option { color: black; } //<!-- 通常の項目の色 -->
     text-align: center;
     margin: 0 auto;
     border: 1px solid var(--black);
+  @include sp {
+    width: 100%;
+  }
     &:hover {
         .single__pagination-label, .single__pagination-link {
             a {

@@ -53,9 +53,25 @@ span.wpcf7-spinner {
     width: 100%;
     table-layout: fixed;
     margin-bottom: 50px;
+  @include note {
+    margin-bottom: 32px;
+  }
+  @include sp {
+    display: block;
+    tbody {
+      display: block;
+    }
+  }
 }
 .contact-form__table-row {
     border-bottom: 1px solid var(--white-2);
+  @include note {
+    border-bottom-color: #ddd;
+  }
+  @include sp {
+    display: block;
+    padding-block: 20px;
+  }
 }
 .contact-form__table-title {
     font-weight: normal;
@@ -63,8 +79,13 @@ span.wpcf7-spinner {
     padding: 1em 0;
     text-align: left;
     @include sp {
-        display: block;
-        width: 90%;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      width: 100%;
+      padding: 0;
+      font-size: 1rem;
+      line-height: 1.6;
     }
 }
 
@@ -74,12 +95,18 @@ span.wpcf7-spinner {
   padding: 0.5em 1em;
   color: var(--white);
   background-color: var(--main-color);
+  @include sp {
+    flex-shrink: 0;
+  }
 }
 .contact-form__optional {
   font-size: 0.75rem;
   padding: 0.5em 1em;
   color: var(--white);
   background-color: var(--main-color);
+  @include sp {
+    flex-shrink: 0;
+  }
 }
 
 .contact-form__table-label {
@@ -89,8 +116,9 @@ span.wpcf7-spinner {
         letter-spacing: .1em;
     }
     @include sp {
-        width: fit-content;
-        padding-right: 20px;
+      width: auto;
+      padding-right: 0;
+      overflow-wrap: anywhere;
     }
 }
 
@@ -98,9 +126,14 @@ span.wpcf7-spinner {
     padding: 15px 0;
     width: 60%;
     word-break: break-all;
+  @include note {
+    overflow-wrap: anywhere;
+    font-size: 1rem;
+  }
     @include sp {
         display: block;
-        padding: 0 0 1em;
+        margin-top: 12px;
+        padding: 0;
         width: 100%;
     }
 }
@@ -113,6 +146,11 @@ span.wpcf7-spinner {
     border: 1px solid transparent;
     border-radius: 5px;
     background-color: #f0f0f0;
+  @include note {
+    min-height: 48px;
+    font-size: 1rem;
+    line-height: 1.6;
+  }
     .wpcf7-list-item {
         &:first-of-type {
             margin-left: 0;
@@ -140,6 +178,12 @@ span.wpcf7-spinner {
     border: 1px solid transparent;
     border-radius: 5px;
     background-color: #f0f0f0;
+  @include note {
+    min-height: 180px;
+    font-size: 1rem;
+    line-height: 1.6;
+    resize: vertical;
+  }
 }
 .contact-disc__wrap {
     background-color: #f0f0f0;
@@ -147,6 +191,9 @@ span.wpcf7-spinner {
     &--confirm {
         margin-top: 40px;
     }
+  @include note {
+    padding: 24px 20px;
+  }
 }
 .contact-privacy__ttl {
   font-size: 1.25rem;
@@ -161,6 +208,7 @@ span.wpcf7-spinner {
     text-align: left;
     max-width: 550px;
     margin-inline: auto;
+    line-height: 1.8;
   }
 }
 
@@ -183,6 +231,19 @@ span.wpcf7-spinner {
     @include sp {
         padding-top: 30px;
     }
+  @include note {
+    .wpcf7-list-item {
+      margin: 0;
+    }
+    .wpcf7-list-item-label {
+      padding-left: 0;
+      line-height: 1.8;
+      letter-spacing: .06em;
+    }
+    label {
+      min-height: 44px;
+    }
+  }
 }
 .contact-form__checkbox {
     width: 1em;
@@ -190,6 +251,13 @@ span.wpcf7-spinner {
     &:checked {
         background-color: var(--main-color);
     }
+  @include note {
+    flex: 0 0 20px;
+    width: 20px;
+    height: 20px;
+    margin-top: 4px;
+    accent-color: var(--main-color);
+  }
 }
 
 .contact-btn__wrap {
@@ -200,7 +268,7 @@ span.wpcf7-spinner {
     @include sp {
         flex-direction: column;
         align-items: center;
-        margin-top: 0;
+        margin-top: 40px;
         gap: 1em;
     }
 }
@@ -274,6 +342,22 @@ span.wpcf7-spinner {
 
 .contact-btn__wrap .contact-btn {
   margin-inline: 0;
+  @include sp {
+    margin-top: 0;
+  }
+}
+
+.contact-form .wpcf7-form-control-wrap {
+  @include note {
+    display: block;
+    max-width: 100%;
+  }
+}
+
+.contact-form .wpcf7-response-output {
+  @include note {
+    overflow-wrap: anywhere;
+  }
 }
 .btn-contact-thanks {
     padding: 15px 0;

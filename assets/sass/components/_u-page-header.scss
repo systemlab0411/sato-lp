@@ -4,6 +4,13 @@
   padding-top: calc(130px + #{space-size(80px)});
   padding-left: 210px;
   text-align: center;
+  @include note {
+    padding-top: 64px;
+    padding-left: 0;
+  }
+  @include sp {
+    padding-top: sp-space-size(48px);
+  }
 }
 
 .u-page__header-inner {
@@ -11,4 +18,23 @@
   flex-direction: column;
   align-items: center;
   gap: space-size(20px);
+  @include note {
+    gap: 16px;
+    .ttl-en {
+      max-width: 100%;
+      line-height: 1.1;
+      overflow-wrap: anywhere;
+    }
+    .ttl-ja {
+      line-height: 1.6;
+    }
+  }
+  @include sp {
+    .ttl-en {
+      font-size: sp-heading-size(32px);
+    }
+    .ttl-ja {
+      font-size: sp-heading-size(20px);
+    }
+  }
 }

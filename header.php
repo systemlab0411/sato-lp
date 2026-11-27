@@ -17,7 +17,12 @@
     <a class="header__logo" href="<?php echo esc_url(home_url('/')); ?>" aria-label="SATO GROUP トップページ">
         <img src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/images/logo-sato-group.svg" width="251" height="70" alt="SATO GROUP">
     </a>
-    <nav class="header__nav" aria-label="ページ内ナビゲーション">
+    <button class="header__toggle" type="button" aria-controls="header-navigation" aria-expanded="false" aria-label="メニューを開く" hidden>
+        <span class="header__toggle-icon" aria-hidden="true"><span></span><span></span><span></span></span>
+        <span class="header__toggle-label" aria-hidden="true">MENU</span>
+    </button>
+    <div class="header__backdrop" aria-hidden="true" hidden></div>
+    <nav class="header__nav" id="header-navigation" aria-label="サイトナビゲーション">
         <ul class="header__nav-list">
             <li class="header__nav-item"><a class="header__nav-link header__nav-link--top<?php if (is_front_page()) : ?> header__nav-link--current<?php endif; ?>" href="<?php echo esc_url(home_url('/#top')); ?>" lang="en">TOP</a></li>
             <li class="header__nav-item"><a class="header__nav-link" href="<?php echo esc_url(home_url('/#group-synergy')); ?>">グループの強み</a></li>
