@@ -2,18 +2,29 @@
 
 <main class="main lp-home" id="top">
     <section class="home-hero" aria-labelledby="hero-title">
+        <?php
+        $hero_images = array(
+            'hero-left.webp',
+            'hero-right.webp',
+            'hero-meeting.webp',
+            'hero-exterior-3.webp',
+            'hero-exterior-2.webp',
+        );
+        ?>
         <div class="home-hero__photos" aria-hidden="true">
-            <div class="home-hero__photo home-hero__photo--left">
-                <img src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/images/hero-left.webp" width="1368" height="1536" alt="" fetchpriority="high">
-            </div>
-            <div class="home-hero__photo home-hero__photo--right">
-                <img src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/images/hero-right.webp" width="1368" height="1536" alt="">
+            <div class="home-hero__track" id="hero-track" data-hero-speed="40">
+                <?php foreach ($hero_images as $hero_index => $hero_image) : ?>
+                    <div class="home-hero__photo">
+                        <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/' . $hero_image); ?>" width="1368" height="1536" alt=""<?php if ($hero_index === 0) : ?> fetchpriority="high"<?php endif; ?> decoding="async">
+                    </div>
+                <?php endforeach; ?>
             </div>
         </div>
         <div class="home-hero__copy">
             <h1 class="home-hero__title" id="hero-title">人と街に夢を</h1>
             <p class="home-hero__lead" lang="en">Dreams for people and cities</p>
         </div>
+        <button class="home-hero__toggle" type="button" aria-controls="hero-track" hidden>スライドショーを停止</button>
     </section>
     <section class="home-concept" aria-labelledby="concept-title">
         <div class="home-concept__background" aria-hidden="true">

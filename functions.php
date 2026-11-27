@@ -89,6 +89,9 @@ function my_enqueue_scripts() {
     // wp_enqueue_script('aos.js', 'https://unpkg.com/aos@2.3.1/dist/aos.js', array(), null, true);
     // original-js
     wp_enqueue_script("my", get_template_directory_uri() . "/assets/js/script.js", array("jquery"), filemtime(get_theme_file_path('/assets/js/script.js')), null, true);
+    if (is_front_page()) {
+        wp_enqueue_script('home-hero-slideshow', get_template_directory_uri() . '/assets/js/hero-slideshow.js', array(), filemtime(get_theme_file_path('/assets/js/hero-slideshow.js')), true);
+    }
     //wp_enqueue_script('script.js', get_template_directory_uri() . '/assets/js/script.js', array(), false, true);
     // wp_enqueue_script('init.js', get_template_directory_uri() . '/assets/js/init.min.js', array(), false, array('strategy' => 'async','in_footer' => true));
 }

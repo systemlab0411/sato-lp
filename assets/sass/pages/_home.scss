@@ -8,18 +8,43 @@
 	background: #fff;
 }
 
-// Figmaは左220pxを空けたうえで、画面幅相当の写真2枚を右端で切り取っています。
+// 左220pxを空け、半画面幅の写真を連続して流します。
 .home-hero__photos {
-	position: absolute;
-	inset: 0 auto 0 220px;
-	display: flex;
-	width: 100vw;
+  position: absolute;
+  inset: 0 auto 0 220px;
+  width: 100vw;
+  overflow: hidden;
+}
+
+.home-hero__track {
+  display: flex;
+  width: max-content;
+  height: 100%;
+  will-change: transform;
 }
 
 .home-hero__photo {
-	flex: 0 0 50%;
-	height: 100%;
-	overflow: hidden;
+  flex: 0 0 50vw;
+  width: 50vw;
+  height: 100%;
+  overflow: hidden;
+}
+
+.home-hero__toggle {
+  position: absolute;
+  right: var(--content-padding);
+  bottom: 20px;
+  padding: .75em 1em;
+  border: 1px solid currentColor;
+  border-radius: 2px;
+  background: rgb(0 0 0 / 55%);
+  font-size: .875rem;
+  line-height: 1.4;
+  color: #fff;
+  &:focus-visible {
+    outline: 2px solid #fff;
+    outline-offset: 4px;
+  }
 }
 
 .home-hero__copy {
@@ -353,40 +378,32 @@
 
 // Figmaの全幅構成に合わせ、左半分を写真、右半分を企業情報に割り当てます。
 .home-companies__article {
-	display: grid;
-	grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
-	align-items: start;
-	gap: space-size(60px);
-	padding-right: space-size(60px);
-	scroll-margin-top: 120px;
-
-	@include note {
-		grid-template-columns: 1fr;
-		padding-right: 0;
-	}
+  display: grid;
+  grid-template-columns: minmax(0, 50%) minmax(0, 1fr);
+  align-items: start;
+  gap: space-size(60px);
+  scroll-margin-top: 120px;
+  @include note {
+    grid-template-columns: 1fr;
+  }
 }
 
 .home-companies__main-image {
-	position: relative;
-	// 左右の余白を除く前の画面幅に対して、写真を半幅で配置します。
-	width: calc(100% + #{space-size(60px)});
-	height: 768px;
-	overflow: hidden;
-	@include note {
-		width: 100%;
-	}
+  position: relative;
+  width: 100%;
+  height: 768px;
+  overflow: hidden;
 }
 
 .home-companies__details {
-	display: flex;
-	flex-direction: column;
-	gap: space-size(80px);
-	// 写真は画面半幅まで広がるため、企業情報の開始位置を60pxずらします。
-	margin-left: space-size(60px);
-
-	@include note {
-		margin-inline: var(--content-padding);
-	}
+  display: flex;
+  flex-direction: column;
+  gap: space-size(80px);
+  // cntの内側の右端に合わせ、共通幅の拡大・上限にも追従させます。
+  margin-right: max(var(--content-padding), calc((100vw - var(--content-width)) / 2 + var(--content-padding)));
+  @include note {
+    margin-inline: var(--content-padding);
+  }
 }
 
 .home-companies__profile {
