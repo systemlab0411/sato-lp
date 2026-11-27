@@ -406,12 +406,11 @@
 }
 
 .home-companies__body {
-  --companies-top-space: #{space-size(100px)};
   display: grid;
   grid-template-columns: minmax(0, 50%) minmax(0, 1fr);
   align-items: start;
   column-gap: space-size(60px);
-  margin-top: var(--companies-top-space);
+  margin-top: space-size(100px);
   @include note {
     display: block;
   }
@@ -433,9 +432,9 @@
 
 .home-companies__sticky {
   position: sticky;
-  top: calc(var(--admin-bar-height) + var(--companies-top-space));
-  height: min(768px, calc(100vh - var(--admin-bar-height) - var(--companies-top-space)));
-  height: min(768px, calc(100dvh - var(--admin-bar-height) - var(--companies-top-space)));
+  top: var(--admin-bar-height);
+  height: calc(100vh - var(--admin-bar-height));
+  height: calc(100dvh - var(--admin-bar-height));
   @include note {
     display: none;
   }
