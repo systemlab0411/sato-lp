@@ -111,13 +111,15 @@
 }
 
 .footer__company-list {
+  --company-column-gap: #{space-size(40px)};
   display: flex;
   flex-wrap: wrap;
   align-items: flex-start;
   row-gap: space-size(30px);
-  column-gap: space-size(40px);
+  column-gap: var(--company-column-gap);
   width: 100%;
-  max-width: 600px;
+  // 3列分の間隔が広がっても、リンクを収める幅を維持します。
+  max-width: calc(600px + (var(--company-column-gap) - 40px) * 2);
 }
 
 .footer__company-item {

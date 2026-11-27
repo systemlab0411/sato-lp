@@ -630,13 +630,14 @@ img {
 }
 
 .footer__company-list {
+  --company-column-gap: clamp(1.5rem, min(0.2118927973rem + 2.6800670017vw, 0.9589350181rem + 1.8050541516vw), 3.125rem);
   display: flex;
   flex-wrap: wrap;
   align-items: flex-start;
   row-gap: clamp(1.125rem, min(0.158919598rem + 2.0100502513vw, 0.7192012635rem + 1.3537906137vw), 2.34375rem);
-  column-gap: clamp(1.5rem, min(0.2118927973rem + 2.6800670017vw, 0.9589350181rem + 1.8050541516vw), 3.125rem);
+  column-gap: var(--company-column-gap);
   width: 100%;
-  max-width: 600px;
+  max-width: calc(600px + (var(--company-column-gap) - 40px) * 2);
 }
 
 .footer__company-item {
