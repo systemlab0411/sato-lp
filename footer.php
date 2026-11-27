@@ -2,6 +2,7 @@
 $footer_company_links = array(
     array('name' => '佐藤建設株式会社', 'url' => 'https://satoukensetsu.co.jp/'),
     array('name' => '株式会社佐藤砕石', 'url' => 'https://satousaiseki.jp/'),
+    array('name' => '佐藤砕石販売株式会社', 'url' => 'https://satousaiseki.jp/'),
     array('name' => '株式会社タケイ', 'url' => 'https://www.k-takei.co.jp/'),
     array('name' => '三栄工業株式会社', 'url' => 'https://sanei.in/'),
     array('name' => '社会福祉法人藤暢会', 'url' => 'https://fuyoukai.bsj.jp/'),

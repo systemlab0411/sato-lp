@@ -113,6 +113,13 @@
                 地域に根ざした事業を展開しています。</p>
         </div>
         <?php
+        // 写真確定までは仮画像を流用します。各社の配列で個別に差し替えられます。
+        $home_company_placeholder_image = array('src' => 'company-main.webp', 'width' => 1366, 'height' => 1536, 'alt' => '企業紹介用の仮画像');
+        $home_company_placeholder_gallery = array(
+            'worker' => array('src' => 'company-worker.webp', 'width' => 460, 'height' => 560, 'alt' => '現場で働くスタッフの仮画像'),
+            'site' => array('src' => 'company-site.webp', 'width' => 560, 'height' => 560, 'alt' => '施設の仮画像'),
+            'meeting' => array('src' => 'company-meeting.webp', 'width' => 600, 'height' => 400, 'alt' => '打ち合わせの仮画像'),
+        );
         $home_companies = array(
             array(
                 'id' => 'company-holdings',
@@ -127,8 +134,10 @@
                 'paragraphs' => array(
                     'SATO GROUPの持株会社として、グループ各社の経営支援や経営基盤の強化を担っています。それぞれの会社が持つ専門性や強みを活かしながら、事業の枠を越えた連携を促し、グループ全体の持続的な成長と新たな価値の創出を目指します。',
                 ),
-                'representative' => '佐藤 公泰',
-                'business' => '各社の経営支援、グループ経営・事業連携の推進、不動産管理',
+                'representative' => '佐藤 宣義',
+                'postal_code' => '709-4316',
+                'address' => '岡山県勝田郡勝央町勝間田225番地27',
+                'business' => '経営支援、グループ経営・事業連携の推進、不動産管理',
             ),
             array(
                 'id' => 'company-sato',
@@ -145,10 +154,99 @@
                     '公共施設や商業施設、医療・福祉施設などの建築、道路や河川をはじめとする土木工事に加え、住宅、設計デザイン、不動産など、暮らしに関わる幅広い領域の事業を展開。',
                     '近年では、カフェや人が集う場の企画・運営など、建物をつくるだけではない新しい街の価値づくりにも取り組んでいます。地域で暮らす人の声に向き合いながら、岡山のこれからに必要な場所や仕組みをつくり続けています。',
                 ),
-                'representative' => '佐藤公泰',
+                'representative' => '佐藤 公泰',
+                'postal_code' => '709-4316',
+                'address' => '岡山県勝田郡勝央町勝間田225番地27',
                 'business' => '建築工事、土木工事、住宅、舗装工事、不動産、一級建築士設計事務所、飲食事業 ほか',
                 'capital' => '7,000',
                 'url' => 'https://satoukensetsu.co.jp/',
+            ),
+            array(
+                'id' => 'company-saiseki',
+                'name' => '株式会社佐藤砕石',
+                'main_image' => $home_company_placeholder_image,
+                'gallery' => $home_company_placeholder_gallery,
+                // 原稿確定までは佐藤建設の情報を仮原稿として使用します。
+                'heading' => '街づくりに欠かせない資源を、安定して届ける。',
+                'paragraphs' => array(
+                    '道路や橋梁、建物など、社会インフラをつくるうえで欠かすことのできない砕石製品の製造・販売を行っています。',
+                    '自然の恵みである岩石を用途に応じて加工し、高品質な建設資材として安定供給するとともに、再生材の製造や建設発生土・産業廃棄物の受け入れにも対応。環境保全や安全性に配慮しながら、資源を有効に活用し、街づくりの足元を支えています。',
+                ),
+                'representative' => '佐藤 宣義',
+                'postal_code' => '709-4316',
+                'address' => '岡山県勝田郡勝央町勝間田225番地27',
+                'business' => '砕石製造販売、再生材製造販売、建設発生土処分、産業廃棄物中間処分、産業廃棄物収集運搬',
+                'capital' => '1,000',
+                'url' => 'https://satousaiseki.jp/',
+            ),
+            array(
+                'id' => 'company-saiseki-sales',
+                'name' => '佐藤砕石販売株式会社',
+                'main_image' => $home_company_placeholder_image,
+                'gallery' => $home_company_placeholder_gallery,
+                // 原稿確定までは佐藤建設の情報を仮原稿として使用します。
+                'heading' => '資源を届け、循環する街づくりを支える。',
+                'paragraphs' => array(
+                    '佐藤砕石で製造された石材の販売・運搬をはじめ、重機・建設機械の運搬（回送）などを担っています。',
+                    '特に再生砕石の取り扱いに力を入れ、限りある資源を有効に活用することで、循環型社会の形成に貢献。資材の供給という立場から、地域の街づくりと持続可能な社会を支えています。 ',
+                ),
+                'representative' => '水嶋 哲也',
+                'postal_code' => '707-0004',
+                'address' => '岡山県美作市入田247番地1',
+                'business' => '石材・再生砕石等の販売・運搬、重機・建設機械の運搬（回送）',
+            ),
+            array(
+                'id' => 'company-takei',
+                'name' => '株式会社タケイ',
+                'main_image' => $home_company_placeholder_image,
+                'gallery' => $home_company_placeholder_gallery,
+                // 原稿確定までは佐藤建設の情報を仮原稿として使用します。
+                'heading' => '安心できる住環境を、これからの暮らしへ。',
+                'paragraphs' => array(
+                    '1984年の創業以来、岡山県を中心に総合建設業として歩んできた株式会社タケイ。公共施設をはじめとする建築工事から、住宅の新築・リフォームまで幅広く手がけています。',
+                    '住宅事業では、高気密・高断熱などの性能と自然素材を活かした住まいづくりを通じて、家族が安心して健やかに暮らせる住環境を提案。地域に根ざした建築会社として、建物と暮らしの両面から、人々の毎日を支えています。',
+                ),
+                'representative' => '佐藤公泰',
+                'postal_code' => '700-0954',
+                'address' => '岡山県岡山市南区米倉123-7',
+                'business' => '総合建築業',
+                'capital' => '7,000',
+                'url' => 'https://www.k-takei.co.jp/',
+            ),
+            array(
+                'id' => 'company-sanei',
+                'name' => '三栄工業株式会社',
+                'main_image' => $home_company_placeholder_image,
+                'gallery' => $home_company_placeholder_gallery,
+                // 原稿確定までは佐藤建設の情報を仮原稿として使用します。
+                'heading' => '建物の快適さと安心を、見えないところから支える。',
+                'paragraphs' => array(
+                    '岡山県南部を中心に、空調設備、給排水衛生設備、消防設備など、建物に欠かせない各種設備工事を手がけています。',
+                    '人が快適に過ごすための空気や水、安全を守る設備など、完成後には見えにくい部分にこそ、長年培ってきた専門技術を発揮。新築工事だけでなく、修繕や改修にも対応し、建物を長く安心して使い続けるための環境づくりを支えています。',
+                ),
+                'representative' => '藤原 由祥',
+                'postal_code' => '701-0203',
+                'address' => '岡山県岡山市南区古新田412-1',
+                'business' => '冷暖房空気調和設備工事、給排水衛生・給湯・ガス設備、機械器具設置工事、各種消火設備、工場・プラント配管設備、水道施工工事 ほか',
+                'capital' => '2,100',
+                'url' => 'https://sanei.in/',
+            ),
+            array(
+                'id' => 'company-fuyoukai',
+                'name' => '社会福祉法人藤暢会',
+                'main_image' => $home_company_placeholder_image,
+                'gallery' => $home_company_placeholder_gallery,
+                // 原稿確定までは佐藤建設の情報を仮原稿として使用します。
+                'heading' => '地域に寄り添い、人の暮らしを支える。',
+                'paragraphs' => array(
+                    '岡山県勝央町を拠点に、特別養護老人ホーム「あかり」や短期入所生活介護を運営するほか、診療所や保育施設の受託運営など、福祉・医療・保育に関わる事業を展開しています。',
+                    '一人ひとりの意思や暮らしを大切にしながら、地域や家庭とのつながりを重視した支援を実践。子どもから高齢者まで、地域で暮らす人が安心して生活できる環境づくりを通じて、SATO GROUPの「人を支える」領域を担っています。',
+                ),
+                'representative' => '佐藤 宣義',
+                'postal_code' => '709-4313',
+                'address' => '岡山県勝田郡勝央町小矢田653-1',
+                'business' => '特別養護老人ホーム、短期入所生活介護、クリニック、保育施設等の運営',
+                'url' => 'https://fuyoukai.bsj.jp/',
             ),
         );
         ?>
@@ -162,31 +260,43 @@
                         <div class="home-companies__details">
                             <div class="home-companies__profile">
                                 <h3 class="home-companies__name" id="<?php echo esc_attr($home_company['id'] . '-title'); ?>"><?php echo esc_html($home_company['name']); ?></h3>
-                                <div class="home-companies__summary">
-                                    <h4 class="home-companies__summary-heading"><?php echo esc_html($home_company['heading']); ?></h4>
-                                    <div class="home-companies__summary-text">
-                                        <?php foreach ($home_company['paragraphs'] as $home_company_paragraph) : ?>
-                                            <p><?php echo esc_html($home_company_paragraph); ?></p>
-                                        <?php endforeach; ?>
+                                <?php if (!empty($home_company['heading']) || !empty($home_company['paragraphs'])) : ?>
+                                    <div class="home-companies__summary">
+                                        <?php if (!empty($home_company['heading'])) : ?>
+                                            <h4 class="home-companies__summary-heading"><?php echo esc_html($home_company['heading']); ?></h4>
+                                        <?php endif; ?>
+                                        <?php if (!empty($home_company['paragraphs'])) : ?>
+                                            <div class="home-companies__summary-text">
+                                                <?php foreach ($home_company['paragraphs'] as $home_company_paragraph) : ?>
+                                                    <p><?php echo esc_html($home_company_paragraph); ?></p>
+                                                <?php endforeach; ?>
+                                            </div>
+                                        <?php endif; ?>
                                     </div>
-                                </div>
+                                <?php endif; ?>
                                 <dl class="home-companies__overview">
                                     <div class="home-companies__overview-row">
                                         <dt>商号</dt>
                                         <dd><?php echo esc_html($home_company['name']); ?></dd>
                                     </div>
-                                    <div class="home-companies__overview-row">
-                                        <dt>代表者</dt>
-                                        <dd class="home-companies__representative"><span>代表取締役</span><span><?php echo esc_html($home_company['representative']); ?></span></dd>
-                                    </div>
-                                    <div class="home-companies__overview-row">
-                                        <dt>本社</dt>
-                                        <dd>〒<span class="home-companies__latin">709-4316</span> 岡山県勝田郡勝央町勝間田<span class="home-companies__latin">225</span>番地<span class="home-companies__latin">27</span></dd>
-                                    </div>
-                                    <div class="home-companies__overview-row">
-                                        <dt>事業内容</dt>
-                                        <dd><?php if ($home_company['id'] === 'company-holdings') : ?><span class="home-companies__latin" lang="en">SATO GROUP</span><?php endif; ?><?php echo esc_html($home_company['business']); ?></dd>
-                                    </div>
+                                    <?php if (!empty($home_company['representative'])) : ?>
+                                        <div class="home-companies__overview-row">
+                                            <dt>代表者</dt>
+                                            <dd class="home-companies__representative"><span>代表取締役</span><span><?php echo esc_html($home_company['representative']); ?></span></dd>
+                                        </div>
+                                    <?php endif; ?>
+                                    <?php if (!empty($home_company['address'])) : ?>
+                                        <div class="home-companies__overview-row">
+                                            <dt>本社</dt>
+                                            <dd><?php if (!empty($home_company['postal_code'])) : ?>〒<span class="home-companies__latin"><?php echo esc_html($home_company['postal_code']); ?></span> <?php endif; ?><?php echo esc_html($home_company['address']); ?></dd>
+                                        </div>
+                                    <?php endif; ?>
+                                    <?php if (!empty($home_company['business'])) : ?>
+                                        <div class="home-companies__overview-row">
+                                            <dt>事業内容</dt>
+                                            <dd><?php echo esc_html($home_company['business']); ?></dd>
+                                        </div>
+                                    <?php endif; ?>
                                     <?php if (!empty($home_company['capital'])) : ?>
                                         <div class="home-companies__overview-row">
                                             <dt>資本金</dt>

@@ -119,7 +119,7 @@
   column-gap: var(--company-column-gap);
   width: 100%;
   // 3列分の間隔が広がっても、リンクを収める幅を維持します。
-  max-width: calc(600px + (var(--company-column-gap) - 40px) * 2);
+  max-width: calc(650px + (var(--company-column-gap) - 40px) * 2);
 }
 
 .footer__company-item {

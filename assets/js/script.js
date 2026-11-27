@@ -46,6 +46,55 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 
+// 画面上部から3割の位置にあるセクションを、ナビの現在位置として扱います。
+document.addEventListener('DOMContentLoaded', function() {
+    const main = document.querySelector('.lp-home');
+    const nav = document.querySelector('.header__nav');
+    if (!main || !nav) return;
+
+    const topLink = nav.querySelector('.header__nav-link--top');
+    const synergyLink = nav.querySelector('a[href$="#group-synergy"]');
+    const companiesLink = nav.querySelector('.header__nav-link--companies');
+    const links = [topLink, synergyLink, companiesLink].filter(Boolean);
+    const sections = [
+        { element: main.querySelector('.home-hero'), link: topLink },
+        { element: main.querySelector('.home-concept'), link: topLink },
+        { element: main.querySelector('.home-synergy'), link: synergyLink },
+        { element: main.querySelector('.home-companies'), link: companiesLink }
+    ].filter(function(section) { return section.element && section.link; });
+    let frame = null;
+
+    function updateCurrent() {
+        frame = null;
+        const marker = window.innerHeight * 0.3;
+        const current = sections.find(function(section) {
+            const rect = section.element.getBoundingClientRect();
+            return rect.top <= marker && rect.bottom > marker;
+        });
+        links.forEach(function(link) {
+            const active = Boolean(current && current.link === link);
+            link.classList.toggle('header__nav-link--current', active);
+            if (active) link.setAttribute('aria-current', 'location');
+            else link.removeAttribute('aria-current');
+        });
+    }
+
+    function scheduleUpdate() {
+        if (frame !== null) return;
+        frame = window.requestAnimationFrame(updateCurrent);
+    }
+
+    window.addEventListener('scroll', scheduleUpdate, { passive: true });
+    window.addEventListener('resize', scheduleUpdate);
+    window.addEventListener('load', scheduleUpdate);
+    window.addEventListener('pageshow', scheduleUpdate);
+    if (typeof ResizeObserver === 'function') {
+        const observer = new ResizeObserver(scheduleUpdate);
+        observer.observe(main);
+    }
+    updateCurrent();
+});
+
 //onを付与 ハンバーガー
 // document.addEventListener('DOMContentLoaded', function() {
 //     const ham_btn = document.getElementById("js-ham-btn");

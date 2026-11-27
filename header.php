@@ -28,6 +28,7 @@
                         <li><a href="<?php echo esc_url(home_url('/#company-holdings')); ?>">サトウ・ホールディングス株式会社</a></li>
                         <li><a href="<?php echo esc_url(home_url('/#company-sato')); ?>">佐藤建設株式会社</a></li>
                         <li><a href="<?php echo esc_url(home_url('/#company-saiseki')); ?>">株式会社佐藤砕石</a></li>
+                        <li><a href="<?php echo esc_url(home_url('/#company-saiseki-sales')); ?>">佐藤砕石販売株式会社</a></li>
                         <li><a href="<?php echo esc_url(home_url('/#company-takei')); ?>">株式会社タケイ</a></li>
                         <li><a href="<?php echo esc_url(home_url('/#company-sanei')); ?>">三栄工業株式会社</a></li>
                         <li><a href="<?php echo esc_url(home_url('/#company-fuyoukai')); ?>">社会福祉法人藤暢会</a></li>
