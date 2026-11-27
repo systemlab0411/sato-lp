@@ -208,6 +208,7 @@ $main-color: map.get($colors, "main-color");
   }
 
   // nav-height
+  --side-nav-width: 339px;
   --admin-bar-height: 0px;
   .admin-bar {
     --admin-bar-height: 32px;

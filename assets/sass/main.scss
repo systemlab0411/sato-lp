@@ -9,10 +9,12 @@
 @use 'components/privacy' as *;
 @use 'components/texts' as *;
 @use 'components/ttl' as *;
+@use 'components/u-page-header' as *;
 @use 'components/u-page-ttl' as *;
 
 @use 'pages/404' as *;
 @use 'pages/about' as *;
+@use 'pages/contact' as *;
 @use 'pages/home' as *;
 @use 'pages/news' as *;
 @use 'pages/recruit' as *;

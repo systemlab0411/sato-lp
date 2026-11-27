@@ -1,0 +1,27 @@
+@use "../base/_global.scss" as *;
+
+.contact-page .contact-form {
+  // ナビの左余白30px + お問い合わせリンク150px + 間隔30px。
+  padding-left: 210px;
+}
+
+.contact-page .contact-form {
+  padding-top: space-size(80px);
+}
+
+.contact-page__lead-title {
+  font-size: heading-size(20px);
+  line-height: 1.6;
+}
+
+.contact-page__lead p {
+  margin-top: space-size(20px);
+  line-height: 2;
+}
+
+.contact-page .contact-form__text {
+  text-align: center;
+  p {
+    line-height: 2;
+  }
+}

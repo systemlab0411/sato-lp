@@ -49,7 +49,7 @@
     flex-direction: column;
     align-items: flex-start;
     gap: 100px;
-    width: 339px;
+    width: var(--side-nav-width);
     height: calc(100vh - var(--admin-bar-height));
     height: calc(100dvh - var(--admin-bar-height));
     padding: 180px 40px 67px 30px;

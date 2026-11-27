@@ -1,0 +1,14 @@
+@use "../base/_global.scss" as *;
+
+.u-page__header {
+  padding-top: calc(130px + #{space-size(80px)});
+  padding-left: 210px;
+  text-align: center;
+}
+
+.u-page__header-inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: space-size(20px);
+}

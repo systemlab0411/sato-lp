@@ -1,9 +1,10 @@
 <?php get_header(); ?>
-    <section class="u-page__ttl">
+<main class="main contact-page">
+    <section class="u-page__header" aria-labelledby="contact-thanks-title">
         <div class="cnt">
-            <div class="u-page__ttl-wrap t-center">
-                <h2 class="u-page__ttl-ja">お問い合わせ完了</h2>
-                <p class="u-page__ttl-en">THANKS</p>
+            <div class="u-page__header-inner">
+                <p class="ttl-en" lang="en">THANKS</p>
+                <h1 class="ttl-ja" id="contact-thanks-title">お問い合わせ完了</h1>
             </div>
         </div>
     </section>
@@ -17,4 +18,5 @@
             </div>
         </div>
     </section>
+</main>
 <?php get_footer(); ?>

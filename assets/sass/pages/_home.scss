@@ -406,11 +406,12 @@
 }
 
 .home-companies__body {
+  --companies-top-space: #{space-size(100px)};
   display: grid;
   grid-template-columns: minmax(0, 50%) minmax(0, 1fr);
   align-items: start;
   column-gap: space-size(60px);
-  margin-top: space-size(100px);
+  margin-top: var(--companies-top-space);
   @include note {
     display: block;
   }
@@ -432,9 +433,9 @@
 
 .home-companies__sticky {
   position: sticky;
-  top: var(--admin-bar-height);
-  height: min(768px, calc(100vh - var(--admin-bar-height)));
-  height: min(768px, calc(100dvh - var(--admin-bar-height)));
+  top: calc(var(--admin-bar-height) + var(--companies-top-space));
+  height: min(768px, calc(100vh - var(--admin-bar-height) - var(--companies-top-space)));
+  height: min(768px, calc(100dvh - var(--admin-bar-height) - var(--companies-top-space)));
   @include note {
     display: none;
   }
@@ -444,8 +445,15 @@
   position: absolute;
   inset: 0;
   visibility: hidden;
+  opacity: 0;
+  transition: opacity .3s ease, visibility 0s .3s;
   &--current {
     visibility: visible;
+    opacity: 1;
+    transition-delay: 0s;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    transition: none;
   }
 }
 

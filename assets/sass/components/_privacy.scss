@@ -2,15 +2,25 @@
 
 // privacy
 .privacy {
-    background-color: var(--white);
-    padding-top: var(--sec-mt-150);
-    padding-bottom: var(--sec-mt-100);
+  background-color: var(--white);
+  padding-top: space-size(80px);
+  padding-bottom: var(--sec-mt-100);
+  padding-left: 210px;
+  p {
+    line-height: 2;
+  }
 }
+
 .privacy__title {
-    margin: 2em 0 0.5em;
-    font-size: 24px;
-    line-height: 1;
+  margin-top: 2em;
+  font-size: heading-size(20px);
+  line-height: 1.6;
 }
+
+.privacy__title + p {
+  margin-top: .5em;
+}
+
 .privacy__info {
     margin-top: 2em;
 }

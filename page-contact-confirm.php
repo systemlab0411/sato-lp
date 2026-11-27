@@ -1,10 +1,10 @@
 <?php get_header(); ?>
-<main class="main">
-    <section class="u-page__ttl">
+<main class="main contact-page">
+    <section class="u-page__header" aria-labelledby="contact-confirm-title">
         <div class="cnt">
-            <div class="u-page__ttl-wrap">
-                <h2 class="u-page__ttl-ja">お問い合わせ内容確認</h2>
-                <p class="u-page__ttl-en">CONFIRM</p>
+            <div class="u-page__header-inner">
+                <p class="ttl-en" lang="en">CONFIRM</p>
+                <h1 class="ttl-ja" id="contact-confirm-title">お問い合わせ内容確認</h1>
             </div>
         </div>
     </section>
@@ -17,4 +17,4 @@
         </div>
     </section>
 </main>
-<?php get_footer(); ?> 
+<?php get_footer(); ?>
