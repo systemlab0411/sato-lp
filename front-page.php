@@ -114,7 +114,6 @@
         </div>
         <?php
         // 写真確定までは仮画像を流用します。各社の配列で個別に差し替えられます。
-        $home_company_placeholder_image = array('src' => 'company-main.webp', 'width' => 1366, 'height' => 1536, 'alt' => '企業紹介用の仮画像');
         $home_company_placeholder_gallery = array(
             'worker' => array('src' => 'company-worker.webp', 'width' => 460, 'height' => 560, 'alt' => '現場で働くスタッフの仮画像'),
             'site' => array('src' => 'company-site.webp', 'width' => 560, 'height' => 560, 'alt' => '施設の仮画像'),
@@ -142,7 +141,7 @@
             array(
                 'id' => 'company-sato',
                 'name' => '佐藤建設株式会社',
-                'main_image' => array('src' => 'company-main.webp', 'width' => 1366, 'height' => 1536, 'alt' => '佐藤建設株式会社の外観'),
+                'main_image' => array('src' => 'hero-left.webp', 'width' => 1368, 'height' => 1536, 'alt' => '佐藤建設株式会社の紹介用仮画像'),
                 'gallery' => array(
                     'worker' => array('src' => 'company-worker.webp', 'width' => 460, 'height' => 560, 'alt' => '現場で働くスタッフ'),
                     'site' => array('src' => 'company-site.webp', 'width' => 560, 'height' => 560, 'alt' => '施設の全景'),
@@ -164,7 +163,7 @@
             array(
                 'id' => 'company-saiseki',
                 'name' => '株式会社佐藤砕石',
-                'main_image' => $home_company_placeholder_image,
+                'main_image' => array('src' => 'hero-right.webp', 'width' => 1368, 'height' => 1536, 'alt' => '株式会社佐藤砕石の紹介用仮画像'),
                 'gallery' => $home_company_placeholder_gallery,
                 // 原稿確定までは佐藤建設の情報を仮原稿として使用します。
                 'heading' => '街づくりに欠かせない資源を、安定して届ける。',
@@ -182,7 +181,7 @@
             array(
                 'id' => 'company-saiseki-sales',
                 'name' => '佐藤砕石販売株式会社',
-                'main_image' => $home_company_placeholder_image,
+                'main_image' => array('src' => 'hero-meeting.webp', 'width' => 1368, 'height' => 1536, 'alt' => '佐藤砕石販売株式会社の紹介用仮画像'),
                 'gallery' => $home_company_placeholder_gallery,
                 // 原稿確定までは佐藤建設の情報を仮原稿として使用します。
                 'heading' => '資源を届け、循環する街づくりを支える。',
@@ -198,7 +197,7 @@
             array(
                 'id' => 'company-takei',
                 'name' => '株式会社タケイ',
-                'main_image' => $home_company_placeholder_image,
+                'main_image' => array('src' => 'hero-exterior-3.webp', 'width' => 1368, 'height' => 1536, 'alt' => '株式会社タケイの紹介用仮画像'),
                 'gallery' => $home_company_placeholder_gallery,
                 // 原稿確定までは佐藤建設の情報を仮原稿として使用します。
                 'heading' => '安心できる住環境を、これからの暮らしへ。',
@@ -216,7 +215,7 @@
             array(
                 'id' => 'company-sanei',
                 'name' => '三栄工業株式会社',
-                'main_image' => $home_company_placeholder_image,
+                'main_image' => array('src' => 'hero-exterior-2.webp', 'width' => 1368, 'height' => 1536, 'alt' => '三栄工業株式会社の紹介用仮画像'),
                 'gallery' => $home_company_placeholder_gallery,
                 // 原稿確定までは佐藤建設の情報を仮原稿として使用します。
                 'heading' => '建物の快適さと安心を、見えないところから支える。',
@@ -234,7 +233,7 @@
             array(
                 'id' => 'company-fuyoukai',
                 'name' => '社会福祉法人藤暢会',
-                'main_image' => $home_company_placeholder_image,
+                'main_image' => array('src' => 'recruit-staff.webp', 'width' => 640, 'height' => 680, 'alt' => '社会福祉法人藤暢会の紹介用仮画像'),
                 'gallery' => $home_company_placeholder_gallery,
                 // 原稿確定までは佐藤建設の情報を仮原稿として使用します。
                 'heading' => '地域に寄り添い、人の暮らしを支える。',
