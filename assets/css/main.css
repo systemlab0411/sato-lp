@@ -1761,18 +1761,36 @@ img {
 }
 
 .home-recruit__tagline {
-  position: relative;
-  left: 50%;
+  display: flex;
   width: max-content;
   margin: clamp(0.75rem, min(0.1059463987rem + 1.3400335008vw, 0.479467509rem + 0.9025270758vw), 1.5625rem) 0 0;
-  transform: translateX(-50%);
   font-size: clamp(7.03125rem, max(4.0122487437rem + 6.2814070352vw, 3.5960063177rem + 6.7689530686vw), 11.71875rem);
   line-height: 1;
   letter-spacing: 0.06em;
   color: #bad2f0;
   white-space: nowrap;
+  animation: recruit-tagline-scroll 40s linear infinite;
+}
+@media (prefers-reduced-motion: reduce) {
+  .home-recruit__tagline {
+    animation: none;
+  }
 }
 
+.home-recruit__tagline-text {
+  flex: 0 0 auto;
+  min-width: 100vw;
+  padding-right: 0.5em;
+}
+
+@keyframes recruit-tagline-scroll {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
 .archive__main {
   background-color: var(--white);
   padding-top: var(--sec-mt-150);

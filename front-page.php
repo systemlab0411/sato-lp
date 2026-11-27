@@ -233,7 +233,10 @@
                 </div>
             </div>
         </div>
-        <p class="home-recruit__tagline" lang="en" aria-hidden="true">LEARN ABOUT SATO'S ENVIRONMENT</p>
+        <p class="home-recruit__tagline" lang="en" aria-hidden="true">
+            <span class="home-recruit__tagline-text">BUILD OKAYAMA'S FUTURE TOGETHER</span>
+            <span class="home-recruit__tagline-text">BUILD OKAYAMA'S FUTURE TOGETHER</span>
+        </p>
     </section>
 </main>
 

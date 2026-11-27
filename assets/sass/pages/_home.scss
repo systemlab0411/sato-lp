@@ -650,14 +650,31 @@
 }
 
 .home-recruit__tagline {
-	position: relative;
-	left: 50%;
-	width: max-content;
-	margin: space-size(20px) 0 0;
-	transform: translateX(-50%);
-	font-size: heading-size(150px);
-	line-height: 1;
-	letter-spacing: 0.06em;
-	color: #bad2f0;
-	white-space: nowrap;
+  display: flex;
+  width: max-content;
+  margin: space-size(20px) 0 0;
+  font-size: heading-size(150px);
+  line-height: 1;
+  letter-spacing: 0.06em;
+  color: #bad2f0;
+  white-space: nowrap;
+  animation: recruit-tagline-scroll 40s linear infinite;
+  @media (prefers-reduced-motion: reduce) {
+    animation: none;
+  }
+}
+
+.home-recruit__tagline-text {
+  flex: 0 0 auto;
+  min-width: 100vw;
+  padding-right: .5em;
+}
+
+@keyframes recruit-tagline-scroll {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
 }
